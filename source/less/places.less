@@ -5,13 +5,31 @@
   color: @color-purple;
 }
 
+@media (max-width: @tablet-width) {
+  .places {
+    width: @tablet-width;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .places {
+    width: @mob-width;
+  }
+}
+
 .places__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(104px, 104px);
 }
 
+@media (max-width: @tablet-width) {
+  .places__wrapper {
+    .cont-pos(70px, 50px);
+  }
+}
+
 .places__title {
-  .outline(blue);
+  //.outline(blue);
   display: inline-block;
   width: 443px;
   margin: 0;
@@ -45,8 +63,25 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .places__title {
+    width: @cont-width-mob;
+    font-size: 58px;
+
+    &::before {
+      bottom: -10px;
+      left: -10px;
+    }
+
+    &::after {
+      top: -10px;
+      right: -10px;
+    }
+  }
+}
+
 .places__list {
-  .outline(gray);
+  //.outline(gray);
   .no-list;
   margin-top: 75px;
   margin-bottom: 0;
@@ -55,13 +90,41 @@
   justify-content: space-between;
 }
 
+@media (max-width: @tablet-width) {
+  .places__list {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .places__list {
+    display: block;
+  }
+}
+
 .places__item {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 320px;
 }
 
+@media (max-width: @tablet-width) {
+  .places__item {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .places__item {
+    width: @cont-width-mob;
+  }
+}
+
 .places__pic {
-  .outline(blue);
+  //.outline(blue);
   border-radius: 50%;
   margin-left: 23px;
 
@@ -70,8 +133,14 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .places__pic {
+    margin-left: 3.5px;
+  }
+}
+
 .places__caption {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 25px;
   margin-bottom: 0;
   padding: 0 23px;
@@ -80,7 +149,7 @@
 }
 
 .places__text {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 22px;
   margin-bottom: 0;
   padding: 0 23px;
@@ -89,8 +158,14 @@
   font-weight: 700;
 }
 
+@media (max-width: @mob-width) {
+  .places__text {
+    font-size: 19px;
+  }
+}
+
 .places__length {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 27px;
   margin-bottom: 0;
   padding: 20px 23px 0 23px;
@@ -119,5 +194,28 @@
 
   &:active {
     background-color: lighten(@color-dark, 30%);
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .places__button {
+    margin-top: 40px;
+    margin-left: 269px;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .places__button {
+    display: none;
+  }
+}
+
+.places__toggles {
+  display: none;
+}
+
+@media (max-width: @mob-width) {
+  .places__toggles {
+    display: block;
   }
 }

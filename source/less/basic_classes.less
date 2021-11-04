@@ -5,8 +5,20 @@
   color: @color-green;
 }
 
+@media (max-width: @tablet-width) {
+  .basic-classes {
+    width: @tablet-width;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .basic-classes {
+    width: @mob-width;
+  }
+}
+
 .basic-classes__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(107px, 115px);
   position: relative;
 
@@ -33,8 +45,34 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .basic-classes__wrapper {
+    .cont-pos(60px, 50px);
+
+    &::before {
+      top: 80px;
+      left: 708px;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .basic-classes__wrapper {
+    .cont-pos(40px, 30px);
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+
 .basic-classes__title {
-  .outline(blue);
+  //.outline(blue);
   display: inline-block;
   width: 495px;
   margin: 0;
@@ -55,8 +93,14 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .basic-classes__title {
+    width: @cont-width-mob;
+  }
+}
+
 .basic-classes__list {
-  .outline(gray);
+  //.outline(gray);
   margin-top: 83px;
   margin-bottom: 0;
   padding: 0;
@@ -66,7 +110,7 @@
 }
 
 .basic-classes__item {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 327px;
   padding-top: 180px;
   text-align: center;
@@ -86,15 +130,32 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .basic-classes__item {
+    width: 220px;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .basic-classes__item {
+    width: @cont-width-mob;
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .basic-classes__caption {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 42px;
 }
 
 .basic-classes__text {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 32px;
   margin-bottom: 0;
   .raleway;
@@ -102,8 +163,14 @@
   font-weight: 700;
 }
 
+@media (max-width: @tablet-width) {
+  .basic-classes__text {
+    font-size: 16px;
+  }
+}
+
 .basic-classes__info {
-  .outline(gold);
+  //.outline(gold);
   display: block;
   margin-top: 27px;
   margin-bottom: 0;
@@ -114,12 +181,12 @@
 }
 
 .basic-classes__time {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
 }
 
 .basic-classes__price {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
 }
 
@@ -137,4 +204,21 @@
     color: lighten(@color-dark, 30%);
     background-color: @color-light;
   }
+}
+
+.basic-classes__toggles {
+  display: none;
+}
+
+@media (max-width: @mob-width) {
+  .basic-classes__toggles {
+    display: block;
+  }
+}
+
+.basic-classes__warning {
+  margin-top: 50px;
+  .bebas;
+  font-size: 25px;
+  color: @color-purple;
 }

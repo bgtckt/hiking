@@ -16,13 +16,40 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .resources {
+    width: @tablet-width;
+
+    &::after {
+      top: 520px;
+      right: 20px;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .resources {
+    width: @mob-width;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
 .resources__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(91px, 91px);
 }
 
+@media (max-width: @tablet-width) {
+  .resources__wrapper {
+    .cont-pos(50px, 50px);
+  }
+}
+
 .resources__title {
-  .outline(blue);
+  //.outline(blue);
   display: inline-block;
   width: 485px;
   margin: 0;
@@ -43,18 +70,36 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .resources__title {
+    width: @cont-width-mob;
+  }
+}
+
 .resources__list {
-  .outline(gray);
+  //.outline(gray);
   margin-top: 100px;
   margin-bottom: 0;
   padding: 0;
   .no-list;
-  .flex(row, nowrap);
+  .flex(row, wrap);
   justify-content: space-between;
 }
 
+@media (max-width: @tablet-width) {
+  .resources__list {
+    padding-left: 70px;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .resources__list {
+    padding: 0;
+  }
+}
+
 .resources__item {
-  .outline(chocolate);
+  //.outline(chocolate);
   box-sizing: border-box;
   width: 588px;
   padding: 47px;
@@ -72,8 +117,26 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .resources__item {
+    margin-bottom: 40px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .resources__item {
+    width: @cont-width-mob;
+    padding: 177px 20px 20px 20px;
+    background-position: 50% 20px;
+  }
+}
+
 .resources__caption {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 42px;
@@ -81,7 +144,7 @@
 }
 
 .resources__text {
-  .outline(blue);
+  //.outline(blue);
   display: inline-block;
   width: 350px;
   margin: 0;
@@ -91,15 +154,25 @@
   font-weight: 700;
 }
 
+@media (max-width: @mob-width) {
+  .resources__text {
+    width: 240px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
 .resources__info {
-  .outline(gold);
+  //.outline(gold);
   margin-top: 35px;
   padding-top: 37px;
   border-top: 3px solid @color-dark;
 }
 
 .resources__date {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 38px;
@@ -107,7 +180,7 @@
 }
 
 .resources__rating {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 17px;
 }
 

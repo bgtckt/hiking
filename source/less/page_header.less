@@ -4,13 +4,32 @@
   background: url('../img/page_header_bg.png') 0% 100% no-repeat @color-light;
 }
 
+@media (max-width: @tablet-width) {
+  .page-header {
+    width: @tablet-width;
+    background-position: -140px 100%;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .page-header {
+    width: @mob-width;
+  }
+}
+
 .page-header__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(69px, 406px);
 }
 
+@media (max-width: @mob-width) {
+  .page-header__wrapper {
+    .cont-pos(30px, 30px);
+  }
+}
+
 .page-header__top {
-  .outline(chocolate);
+  //.outline(chocolate);
   .flex(row, wrap);
   justify-content: space-between;
   position: relative;
@@ -27,8 +46,17 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .page-header__top {
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
 .page-header__bottom {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 364px;
   margin-top: 77px;
   padding: 0 0 24px 18px;
@@ -48,8 +76,21 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .page-header__bottom {
+    width: @cont-width-mob;
+    margin-top: 40px;
+    padding: 0;
+
+    &::after {
+      bottom: -10px;
+      left: -10px;
+    }
+  }
+}
+
 .page-header__logo {
-  .outline(gold);
+  //.outline(gold);
   display: block;
   width: 211px;
   height: 41px;
@@ -61,12 +102,18 @@
   }
 }
 
-.page-header__nav {
-  .outline(gold);
+@media (max-width: @tablet-width) {
+  .page-header__logo {
+    width: 58px;
+    height: 32px;
+    align-self: flex-end;
+    background-image: url('../img/logo_tablet.png');
+  }
 }
 
+
 .page-header__search {
-  .outline(gold);
+  //.outline(gold);
   width: 189px;
   height: 33px;
   box-sizing: border-box;
@@ -87,19 +134,39 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .page-header__search {
+    width: 160px;
+  }
+}
+
 .page-header__button {
   display: none;
 }
 
+@media (max-width: @mob-width) {
+  .page-header__button {
+    //.outline(blue);
+    display: flex;
+    width: 45px;
+    height: 33px;
+    align-self: flex-end;
+    font-size: 0;
+    border-radius: 0;
+    background-color: inherit;
+    background: url('../img/page_header_button.png') center no-repeat;
+  }
+}
+
 .page-header__title {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   font-size: 75px;
   line-height: 1;
 }
 
 .page-header__subtitle {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 20px;
   margin-bottom: 0;
   font-size: 38px;

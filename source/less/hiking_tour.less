@@ -5,15 +5,35 @@
   background: url('../img/hiking_tour_bg.png') center no-repeat;
 }
 
+@media (max-width: @tablet-width) {
+  .hiking-tour {
+    width: @tablet-width;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .hiking-tour {
+    width: @mob-width;
+    background-position: -650px 0;
+  }
+}
+
 .hiking-tour__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(107px, 87px);
-  .flex(row, nowrap);
+  .flex(row, wrap);
   justify-content: space-between;
 }
 
+@media (max-width: @mob-width) {
+  .hiking-tour__wrapper {
+    .cont-pos(30px, 30px);
+    display: block;
+  }
+}
+
 .hiking-tour__info {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 890px;
   position: relative;
 
@@ -42,16 +62,58 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .hiking-tour__info {
+
+    &::before {
+      left: -14px;
+    }
+
+    &::after {
+      top: -22px;
+      right: 20px;
+    }
+  }
+}
+
+@media (max-width: @mob-width) {
+  .hiking-tour__info {
+    width: @cont-width-mob;
+
+    &::before {
+      top: 200px;
+      left: -14px;
+    }
+
+    &::after {
+      top: -22px;
+      right: 20px;
+    }
+  }
+}
+
 .hiking-tour__title {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 100px;
   line-height: 1;
 }
 
+@media (max-width: @tablet-width) {
+  .hiking-tour__title {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .hiking-tour__title {
+    font-size: 42px;
+  }
+}
+
 .hiking-tour__subtitle {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 23px;
   margin-bottom: 0;
   .bebas;
@@ -59,14 +121,27 @@
   line-height: 1;
 }
 
+@media (max-width: @mob-width) {
+  .hiking-tour__subtitle {
+    font-size: 21px;
+  }
+}
+
 .hiking-tour__add {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 189px;
   margin-top: 200px;
 }
 
+@media (max-width: @mob-width) {
+  .hiking-tour__add {
+    width: @cont-width-mob;
+    margin-top: 20px;
+  }
+}
+
 .hiking-tour__date {
-  .outline(blue);
+  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 50px;
@@ -99,5 +174,11 @@
   &:active {
     color: @color-light;
     background-color: lighten(@color-green, 20%);
+  }
+}
+
+@media (max-width: @mob-width) {
+  .hiking-tour__button {
+    margin-left: 91px;
   }
 }

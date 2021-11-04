@@ -5,8 +5,22 @@
   background: url('../img/ice_climbing_bg.png') bottom no-repeat @color-light;
 }
 
+@media (max-width: @tablet-width) {
+  .ice-climbing {
+    width: @tablet-width;
+    background-position: -440px 100%;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing {
+    width: @mob-width;
+    background-position: -600px 125%;
+  }
+}
+
 .ice-climbing__wrapper {
-  .outline(red);
+  //.outline(red);
   .cont-pos(70px, 253px);
   .flex(row, nowrap);
   justify-content: space-between;
@@ -25,13 +39,41 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .ice-climbing__wrapper {
+    .cont-pos(40px, 100px);
+    display: block;
+  }
+}
+
+@media (max-width: @tablet-width) {
+  .ice-climbing__wrapper {
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
 .ice-climbing__main {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 531px;
 }
 
+@media (max-width: @tablet-width) {
+  .ice-climbing__main {
+    text-align: right;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .ice-climbing__main {
+    width: @cont-width-mob;
+  }
+}
+
 .ice-climbing__title {
-  .outline(blue);
+  //.outline(blue);
   display: inline-block;
   width: 245px;
   margin: 0;
@@ -65,8 +107,18 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .ice-climbing__title {
+
+    &::after {
+      top: -22px;
+      right: -10px;
+    }
+  }
+}
+
 .ice-climbing__subtitle {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 43px;
   margin-bottom: 0;
   .bebas;
@@ -74,7 +126,7 @@
 }
 
 .ice-climbing__text {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 18px;
   margin-bottom: 0;
   .bitter;
@@ -82,8 +134,15 @@
   line-height: 45px;
 }
 
+@media (max-width: @mob-width) {
+  .ice-climbing__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+}
+
 .ice-climbing__info {
-  .outline(blue);
+  //.outline(blue);
   margin-top: 33px;
   margin-bottom: 0;
   padding-top: 32px;
@@ -94,8 +153,14 @@
   border-top: 2px solid @color-green;
 }
 
+@media (max-width: @mob-width) {
+  .ice-climbing__info {
+    padding: 0;
+  }
+}
+
 .ice-climbing__add {
-  .outline(chocolate);
+  //.outline(chocolate);
   width: 241px;
   .flex(row, wrap);
   justify-content: space-between;
@@ -115,8 +180,23 @@
   }
 }
 
+@media (max-width: @mob-width) {
+  .ice-climbing__add {
+    width: @cont-width-mob;
+    margin-top: 30px;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
 .ice-climbing__date {
-  .outline(blue);
+  //.outline(blue);
   display: block;
   width: 100px;
   margin: 0;
@@ -124,8 +204,14 @@
   font-size: 33px;
 }
 
+@media (max-width: @mob-width) {
+  .ice-climbing__date {
+    color: @color-light;
+  }
+}
+
 .ice-climbing__price {
-  .outline(blue);
+  //.outline(blue);
   display: block;
   width: 82px;
   margin: 0;
