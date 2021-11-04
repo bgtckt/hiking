@@ -1,0 +1,36 @@
+.main-nav {
+  width: 622px;
+}
+
+.main-nav__list {
+  .outline(blue);
+  .no-list;
+  margin: 0;
+  padding: 0;
+  .flex(row, wrap);
+  justify-content: space-between;
+}
+
+.main-nav__item {
+  .outline(gray);
+  padding-top: 14px;
+}
+
+.main-nav__link {
+  .outline(cyan);
+  .no-line;
+  .nunito;
+  font-size: 21px;
+  font-weight: 300;
+
+  &:hover {
+    font-weight: 700;
+    border-bottom: 2px solid @color-dark;
+  }
+
+  &:active {
+    color: lighten(@color-dark, 30%);
+    font-weight: 700;
+    border-bottom: 2px solid @color-dark;
+  }
+}

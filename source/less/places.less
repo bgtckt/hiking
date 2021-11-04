@@ -1,0 +1,123 @@
+.places {
+  .outline(blue);
+  width: @desktop-width;
+  background-color: @color-light;
+  color: @color-purple;
+}
+
+.places__wrapper {
+  .outline(red);
+  .cont-pos(104px, 104px);
+}
+
+.places__title {
+  .outline(blue);
+  display: inline-block;
+  width: 443px;
+  margin: 0;
+  .bebas;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -31px;
+    left: -36px;
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid @color-purple;
+    border-left: 3px solid @color-purple;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: -31px;
+    right: -36px;
+    width: 36px;
+    height: 36px;
+    border-top: 3px solid @color-purple;
+    border-right: 3px solid @color-purple;
+  }
+}
+
+.places__list {
+  .outline(gray);
+  .no-list;
+  margin-top: 75px;
+  margin-bottom: 0;
+  padding: 0;
+  .flex(row, wrap);
+  justify-content: space-between;
+}
+
+.places__item {
+  .outline(chocolate);
+  width: 320px;
+}
+
+.places__pic {
+  .outline(blue);
+  border-radius: 50%;
+  margin-left: 23px;
+
+  &:hover {
+    border-radius: 25%;
+  }
+}
+
+.places__caption {
+  .outline(blue);
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding: 0 23px;
+  .bebas;
+  font-size: 37px;
+}
+
+.places__text {
+  .outline(blue);
+  margin-top: 22px;
+  margin-bottom: 0;
+  padding: 0 23px;
+  .raleway;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.places__length {
+  .outline(blue);
+  margin-top: 27px;
+  margin-bottom: 0;
+  padding: 20px 23px 0 23px;
+  .bebas;
+  font-size: 25px;
+  border-top: 2px solid @color-purple;
+}
+
+.places__more {
+  width: 7px;
+  height: 26px;
+  font-size: 0;
+  border-radius: 0;
+  background: url('../img/button_more.png') no-repeat center @color-light;
+}
+
+.places__button {
+  margin-top: 101px;
+  margin-left: 515px;
+  color: @color-light;
+  background-color: @color-purple;
+
+  &:hover {
+    background-color: @color-dark;
+  }
+
+  &:active {
+    background-color: lighten(@color-dark, 30%);
+  }
+}

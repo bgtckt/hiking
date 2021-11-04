@@ -1,0 +1,102 @@
+.page-footer {
+  .outline(blue);
+  width: @desktop-width;
+  color: @color-green;
+  background-color: @color-light;
+}
+
+.page-footer__wrapper {
+  .outline(red);
+  .cont-pos(109px, 59px);
+  .flex(row, nowrap);
+  justify-content: space-between;
+}
+
+.page-footer__block {
+  .outline(chocolate);
+  width: 280px;
+  .raleway;
+}
+
+.page-footer__caption {
+  .outline(blue);
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page-footer__text {
+  .outline(blue);
+  margin-top: 26px;
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+.page-footer__logo {
+  .outline(blue);
+  margin-top: 60px;
+  margin-bottom: 0;
+  display: block;
+  width: 211px;
+  height: 41px;
+  font-size: 0;
+  background-image: url('../img/logo.png');
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.page-footer__contacts {
+  .outline(blue);
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.page-footer__link {
+  .outline(cyan);
+  display: block;
+  width: 100px;;
+  margin-bottom: 10px;
+  .no-line;
+  color: @color-green;
+
+  &:first-of-type {
+    margin-top: 31px;
+  }
+
+  &--appstore {
+    display: block;
+    width: 240px;
+    height: 85px;
+    font-size: 0;
+    background-image: url('../img/appstore.png');
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--googleplay {
+    display: block;
+    width: 240px;
+    height: 71px;
+    font-size: 0;
+    background-image: url('../img/google_play.png');
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &:hover {
+    font-weight: 700;
+  }
+
+  &:active {
+    color: @color-dark;
+  }
+}

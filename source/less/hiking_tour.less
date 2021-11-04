@@ -1,0 +1,103 @@
+.hiking-tour {
+  .outline(blue);
+  width: @desktop-width;
+  color: @color-white;
+  background: url('../img/hiking_tour_bg.png') center no-repeat;
+}
+
+.hiking-tour__wrapper {
+  .outline(red);
+  .cont-pos(107px, 87px);
+  .flex(row, nowrap);
+  justify-content: space-between;
+}
+
+.hiking-tour__info {
+  .outline(chocolate);
+  width: 890px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 322px;
+    left: -24px;
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid @color-white;
+    border-left: 3px solid @color-white;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: -14px;
+    right: -4px;
+    width: 36px;
+    height: 36px;
+    border-top: 3px solid @color-white;
+    border-right: 3px solid @color-white;
+  }
+}
+
+.hiking-tour__title {
+  .outline(blue);
+  margin: 0;
+  .bebas;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.hiking-tour__subtitle {
+  .outline(blue);
+  margin-top: 23px;
+  margin-bottom: 0;
+  .bebas;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.hiking-tour__add {
+  .outline(chocolate);
+  width: 189px;
+  margin-top: 200px;
+}
+
+.hiking-tour__date {
+  .outline(blue);
+  margin: 0;
+  .bebas;
+  font-size: 50px;
+  line-height: 41px;
+  text-align: right;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -30px;
+    right: 0;
+    width: 95px;
+    height: 1px;
+    border-bottom: 9px solid @color-light;
+  }
+}
+
+.hiking-tour__button {
+  margin-top: 83px;
+  color: @color-dark;
+  background-color: @color-light;
+
+  &:hover {
+    color: @color-light;
+    background-color: @color-green;
+  }
+
+  &:active {
+    color: @color-light;
+    background-color: lighten(@color-green, 20%);
+  }
+}

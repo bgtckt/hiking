@@ -1,0 +1,33 @@
+.rating {
+  .flex(row, wrap);
+}
+
+.rating__markers {
+  .outline(cyan);
+  display: block;
+  width: 78px;
+  .flex(row, nowrap);
+  justify-content: space-between;
+}
+
+.rating__marker {
+  display: block;
+  align-self: flex-end;
+  stroke: @color-dark;
+  fill: none;
+
+  &--filled {
+    fill: @color-dark;
+  }
+}
+
+.rating__value {
+  .outline(cyan);
+  display: inline-block;
+  width: 37px;
+  margin: 0 0 0 19px;
+  .raleway;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+}

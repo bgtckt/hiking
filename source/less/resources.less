@@ -1,0 +1,126 @@
+.resources {
+  .outline(blue);
+  width: @desktop-width;
+  background-color: @color-light;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 91px;
+    right: 50px;
+    width: 23px;
+    height: 667px;
+    background-image: url('../img/resources_x.png');
+  }
+}
+
+.resources__wrapper {
+  .outline(red);
+  .cont-pos(91px, 91px);
+}
+
+.resources__title {
+  .outline(blue);
+  display: inline-block;
+  width: 485px;
+  margin: 0;
+  .bebas;
+  font-size: 58px;
+  line-height: 1;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -30px;
+    left: 0;
+    width: 95px;
+    height: 1px;
+    border-bottom: 9px solid @color-dark;
+  }
+}
+
+.resources__list {
+  .outline(gray);
+  margin-top: 100px;
+  margin-bottom: 0;
+  padding: 0;
+  .no-list;
+  .flex(row, nowrap);
+  justify-content: space-between;
+}
+
+.resources__item {
+  .outline(chocolate);
+  box-sizing: border-box;
+  width: 588px;
+  padding: 47px;
+  box-shadow: 0px 5px 10px 0px @color-shadow;
+  border-radius: 10px;
+  background-position: 400px 122px;
+  background-repeat: no-repeat;
+
+  &:first-of-type {
+    background-image: url('../img/resources_pic1.png');
+  }
+
+  &:last-of-type {
+    background-image: url('../img/resources_pic2.png');
+  }
+}
+
+.resources__caption {
+  .outline(blue);
+  margin: 0;
+  .bebas;
+  font-size: 42px;
+  line-height: 41px;
+}
+
+.resources__text {
+  .outline(blue);
+  display: inline-block;
+  width: 350px;
+  margin: 0;
+  .raleway;
+  font-size: 21px;
+  line-height: 41px;
+  font-weight: 700;
+}
+
+.resources__info {
+  .outline(gold);
+  margin-top: 35px;
+  padding-top: 37px;
+  border-top: 3px solid @color-dark;
+}
+
+.resources__date {
+  .outline(blue);
+  margin: 0;
+  .bebas;
+  font-size: 38px;
+  line-height: 41px;
+}
+
+.resources__rating {
+  .outline(blue);
+  margin-top: 17px;
+}
+
+.resources__button {
+  margin-top: 17px;
+  color: @color-white;
+  background-color: @color-dark;
+
+  &:hover {
+    background-color: @color-purple;
+  }
+
+  &:active {
+    background-color: lighten(@color-purple, 20%);
+  }
+}

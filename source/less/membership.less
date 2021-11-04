@@ -1,0 +1,131 @@
+.membership {
+  .outline(blue);
+  width: @desktop-width;
+  color: @color-light;
+  background: url('../img/membership_bg.png') top no-repeat @color-green;
+}
+
+.membership__wrapper {
+  .outline(red);
+  .cont-pos(30px, 30px);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 45px;
+    left: -53px;
+    width: 23px;
+    height: 93px;
+    background-image: url('../img/membership_x.png');
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 95px;
+    right: -53px;
+    width: 23px;
+    height: 93px;
+    background-image: url('../img/membership_x.png');
+  }
+}
+
+.membership__title {
+  .outline(blue);
+  display: inline-block;
+  width: 500px;
+  margin: 0;
+  .bebas;
+  font-size: 58px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -30px;
+    left: 0;
+    width: 95px;
+    height: 1px;
+    border-bottom: 9px solid @color-light;
+  }
+}
+
+.membership__subtitle {
+  .outline(blue);
+  margin-top: 45px;
+  margin-bottom: 0;
+  .bebas;
+  font-size: 42px;
+}
+
+.membership__form {
+  .outline(chocolate);
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+.membership__fieldset {
+  .outline(gray);
+  padding: 0;
+  .flex(row, wrap);
+  justify-content: space-between;
+  border: none;
+}
+
+.membership__field {
+  .outline(blue);
+  width: 189px;
+  .flex(column, nowrap);
+}
+
+.membership__label {
+  .nunito;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+.membership__input {
+  width: 189px;
+  height: 33px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  padding-left: 15px;
+  .nunito;
+  color: @color-green;
+  background-color: @color-white;
+  outline: none;
+  border-radius: 25px;
+  border: none;
+  box-shadow: inset 0px 5px 5px 0px @color-shadow;
+
+  &::placeholder {
+    color: @color-green;
+  }
+
+  &:focus {
+    outline: 2px solid @color-dark;
+  }
+}
+
+.membership__button {
+  margin-top: 30px;
+  margin-left: 515px;
+  color: @color-green;
+  background-color: @color-light;
+
+  &:hover {
+    color: @color-light;
+    background-color: @color-purple;
+  }
+
+  &:active {
+    color: @color-light;
+    background-color: lighten(@color-purple, 20%);
+  }
+}

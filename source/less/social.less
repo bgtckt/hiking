@@ -1,0 +1,65 @@
+.social {
+  padding: 0;
+  .no-list;
+  .flex(row, wrap);
+}
+
+.social__item {
+  .outline(chocolate);
+  width: 46px;
+  height: 46px;
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.social__item {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.social__link {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  background: center no-repeat;
+  filter: invert(88%) sepia(2%) saturate(857%) hue-rotate(357deg) brightness(114%) contrast(97%);
+
+  &--facebook {
+    background: url('../img/facebook.png');
+  }
+
+  &--twitter {
+    background: url('../img/twitter.png');
+  }
+
+  &--instagram {
+    background: url('../img/instagram.png');
+  }
+
+  &--youtube {
+    background: url('../img/youtube.png');
+  }
+
+  &--linkedin {
+    background: url('../img/linkedin.png');
+  }
+
+  &:hover {
+    filter: brightness(0) saturate(100%) invert(30%) sepia(10%) saturate(1202%) hue-rotate(222deg) brightness(94%) contrast(90%);
+  }
+
+  &:active {
+    filter: brightness(0) saturate(100%) invert(24%) sepia(18%) saturate(1198%) hue-rotate(175deg) brightness(93%) contrast(88%);
+  }
+}

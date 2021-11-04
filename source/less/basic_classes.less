@@ -1,0 +1,140 @@
+.basic-classes {
+  .outline(blue);
+  width: @desktop-width;
+  background-color: @color-light;
+  color: @color-green;
+}
+
+.basic-classes__wrapper {
+  .outline(red);
+  .cont-pos(107px, 115px);
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 117px;
+    left: -53px;
+    width: 23px;
+    height: 93px;
+    background-image: url('../img/classes_x.png');
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 115px;
+    right: -53px;
+    width: 23px;
+    height: 93px;
+    background-image: url('../img/classes_x.png');
+  }
+}
+
+.basic-classes__title {
+  .outline(blue);
+  display: inline-block;
+  width: 495px;
+  margin: 0;
+  .bebas;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -33px;
+    left: 0;
+    width: 95px;
+    height: 1px;
+    border-bottom: 9px solid @color-green;
+  }
+}
+
+.basic-classes__list {
+  .outline(gray);
+  margin-top: 83px;
+  margin-bottom: 0;
+  padding: 0;
+  .no-list;
+  .flex(row, wrap);
+  justify-content: space-between;
+}
+
+.basic-classes__item {
+  .outline(chocolate);
+  width: 327px;
+  padding-top: 180px;
+  text-align: center;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  &:nth-of-type(1) {
+    background-image: url('../img/classes_pic1.png');
+  }
+
+  &:nth-of-type(2) {
+    background-image: url('../img/classes_pic2.png');
+  }
+
+  &:nth-of-type(3) {
+    background-image: url('../img/classes_pic3.png');
+  }
+}
+
+.basic-classes__caption {
+  .outline(blue);
+  margin: 0;
+  .bebas;
+  font-size: 42px;
+}
+
+.basic-classes__text {
+  .outline(blue);
+  margin-top: 32px;
+  margin-bottom: 0;
+  .raleway;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.basic-classes__info {
+  .outline(gold);
+  display: block;
+  margin-top: 27px;
+  margin-bottom: 0;
+  padding-top: 20px;
+  .bebas;
+  font-size: 25px;
+  border-top: 2px solid @color-green;
+}
+
+.basic-classes__time {
+  .outline(blue);
+  margin: 0;
+}
+
+.basic-classes__price {
+  .outline(blue);
+  margin: 0;
+}
+
+.basic-classes__button {
+  margin-top: 25px;
+  color: @color-light;
+  background-color: @color-green;
+
+  &:hover {
+    color: @color-dark;
+    background-color: @color-light;
+  }
+
+  &:active {
+    color: lighten(@color-dark, 30%);
+    background-color: @color-light;
+  }
+}

@@ -1,0 +1,136 @@
+.ice-climbing {
+  .outline(blue);
+  width: @desktop-width;
+  color: @color-green;
+  background: url('../img/ice_climbing_bg.png') bottom no-repeat @color-light;
+}
+
+.ice-climbing__wrapper {
+  .outline(red);
+  .cont-pos(70px, 253px);
+  .flex(row, nowrap);
+  justify-content: space-between;
+  position: relative;
+
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 112px;
+    right: -50px;
+    width: 8px;
+    height: 30px;
+    background-image: url('../img/ice_climbing_x.png');
+  }
+}
+
+.ice-climbing__main {
+  .outline(chocolate);
+  width: 531px;
+}
+
+.ice-climbing__title {
+  .outline(blue);
+  display: inline-block;
+  width: 245px;
+  margin: 0;
+  .bebas;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: -35px;
+    left: -29px;
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid @color-green;
+    border-left: 3px solid @color-green;
+  }
+
+  &::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: -22px;
+    right: 130px;
+    width: 36px;
+    height: 36px;
+    border-top: 3px solid @color-green;
+    border-right: 3px solid @color-green;
+  }
+}
+
+.ice-climbing__subtitle {
+  .outline(blue);
+  margin-top: 43px;
+  margin-bottom: 0;
+  .bebas;
+  font-size: 42px;
+}
+
+.ice-climbing__text {
+  .outline(blue);
+  margin-top: 18px;
+  margin-bottom: 0;
+  .bitter;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+.ice-climbing__info {
+  .outline(blue);
+  margin-top: 33px;
+  margin-bottom: 0;
+  padding-top: 32px;
+  .raleway;
+  font-size: 25px;
+  line-height: 41px;
+  font-weight: 700;
+  border-top: 2px solid @color-green;
+}
+
+.ice-climbing__add {
+  .outline(chocolate);
+  width: 241px;
+  .flex(row, wrap);
+  justify-content: space-between;
+  order: -1;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 50px;
+    right: -46px;
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid @color-green;
+    border-right: 3px solid @color-green;
+  }
+}
+
+.ice-climbing__date {
+  .outline(blue);
+  display: block;
+  width: 100px;
+  margin: 0;
+  .bebas;
+  font-size: 33px;
+}
+
+.ice-climbing__price {
+  .outline(blue);
+  display: block;
+  width: 82px;
+  margin: 0;
+  .raleway;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}

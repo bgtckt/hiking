@@ -30,57 +30,36 @@
               </li>
             </ul>
           </nav>
-          <input class="page-header__search" type="text" name="search" id="search">
+          <input class="page-header__search" type="text" name="search" id="search" placeholder="Find tours, classes, etc">
           <button class="page-header__button button" type="button">Open menu</button>
         </div>
         <div class="page-header__bottom">
           <h1 class="page-header__title">Discover your next hike</h1>
-          <p class="page-header__subtitle">Get on the trail with detailed maps shared by hikers like you.</p>
+          <p class="page-header__subtitle">Get on the trail with detailed maps shared by hikers like you</p>
         </div>
       </div>
     </header>
 
     <main class="page-main">
-      <section class="resources">
+      <section class="resources" id="app-resources" v-cloak>
         <div class="resources__wrapper">
-          <h2 class="resources__title">Hiking resources for your next hike</h2>
+          <h2 class="resources__title">{{ title }}</h2>
           <ul class="resources__list">
-            <li class="resources__item">
-              <h4 class="resources__caption">Before you go</h4>
-              <p class="resources__text">Start by making sure you’re carrying the Ten Essentials. This is a collection
-                of gear and clothing that all hikers should carry whenever they step onto the trail.
-              </p>
+            <li class="resources__item" v-for="(resource, idx) in resources">
+              <h4 class="resources__caption">{{ resource.caption }}</h4>
+              <p class="resources__text">{{ resource.text }}</p>
               <div class="resources__info">
-                <p class="resources__date">Date of publishing:<br>15.10.21</p>
-                <div class="resources__raiting raitig">
-                  <span class="raiting__markers">
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
+                <p class="resources__date">Date of publishing:<br>{{ resource.date }}</p>
+                <div class="resources__rating rating">
+                  <span class="rating__markers">
+                    <svg
+                      :class="['rating__marker', {'rating__marker--filled': i < resource.rating}]"
+                      v-for="(item, i) in 5"
+                      width="11" height="11">
+                      <circle cx="5" cy="5" r="4.5"/>
+                    </svg>
                   </span>
-                  <p class="raiting__value">5/5</p>
-                </div>
-                <button class="resources__button button" type="button">See more</button>
-              </div>
-            </li>
-            <li class="resources__item">
-              <h4 class="resources__caption">What to wear hiking</h4>
-              <p class="resources__text">Choose clothing made of quick-drying, moisture-wicking fabrics, such as wool or polyester.
-                Avoid cotton, which takes a long time to dry when wet. You can think of clothing as separate systems.
-              </p>
-              <div class="resources__info">
-                <p class="resources__date">Date of publishing:<br>19.10.21</p>
-                <div class="resources__raiting raitig">
-                  <span class="raiting__markers">
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                    <svg class="raiting__marker" width="10" height="10"><circle cx="5" cy="5" r="5"/></svg>
-                  </span>
-                  <p class="raiting__value">4/5</p>
+                  <p class="rating__value">{{ resource.rating }}/5</p>
                 </div>
                 <button class="resources__button button" type="button">See more</button>
               </div>
@@ -91,49 +70,28 @@
 
       <section class="hiking-tour">
         <div class="hiking-tour__wrapper">
-          <h2 class="hiking-tour__title">Morrison and Rimrock Trails hiking tour</h2>
-          <p class="hiking-tour__subtitle">A beautiful and challenging trek with great views of the Allegheny Reservoir.</p>
           <div class="hiking-tour__info">
+            <h2 class="hiking-tour__title">Morrison and Rimrock Trails hiking tour</h2>
+            <p class="hiking-tour__subtitle">A beautiful and challenging trek with great views of the Allegheny Reservoir.</p>
+          </div>
+          <div class="hiking-tour__add">
             <p class="hiking-tour__date">30.10.21</p>
             <button class="hiking-tour__button button" type="button">See more</button>
           </div>
         </div>
       </section>
 
-      <section class="places">
+      <section class="places" id="app-places" v-cloak>
         <div class="places__wrapper">
-          <h2 class="places__title">Places to visit in autumn</h2>
+          <h2 class="places__title">{{ title }}</h2>
           <ul class="places__list">
-            <li class="places__item">
-              <img class="places__pic" src="img/old_rag.png" alt="Old Rag photo">
+            <li class="places__item" v-for="(place, idx) in places">
+              <img class="places__pic" :src=place.url width="273" height="273" :alt=place.caption>
               <div class="places__info">
-                <button class="places__more button" type="button">More</button>
-                <h4 class="places__caption">Old Rag Summit</h4>
-                <p class="places__text">The journey to Old Rag is one of the most popular in the mid-Atlantic, and from the summit,
-                  it’s easy to see why.
-                </p>
-                <p class="places__length">Route length: 14,3 km</p>
-              </div>
-            </li>
-            <li class="places__item">
-              <img class="places__pic" src="img/clouds_rest.png" alt="Clouds Rest photo">
-              <div class="places__info">
-                <button class="places__more button" type="button">More</button>
-                <h4 class="places__caption">Clouds Rest</h4>
-                <p class="places__text">You can see many of the major mountains and a lot of the features of the Yosemite National Park from
-                  this vantage point.
-                </p>
-                <p class="places__length">Route length: 12,1 km</p>
-              </div>
-            </li>
-            <li class="places__item">
-              <img class="places__pic" src="img/trail_ridge_road.png" alt="Trail Ridge Road photo">
-              <div class="places__info">
-                <button class="places__more button" type="button">More</button>
-                <h4 class="places__caption">Trail Ridge Road</h4>
-                <p class="places__text">Trail Ridge Road offers visitors thrilling views, wildlife sightings and spectacular alpine wildflower exhibitions.
-                </p>
-                <p class="places__length">Route length: 10,8 km</p>
+                <button class="places__more button" type="button" @click="showWarning(idx)">More</button>
+                <h4 class="places__caption">{{idx + 1}}. {{ place.caption }}</h4>
+                <p class="places__text">{{ place.text }}</p>
+                <p class="places__length">Route length: {{ place.length }}</p>
               </div>
             </li>
           </ul>
@@ -143,53 +101,32 @@
 
       <section class="backpacking-tour">
         <div class="backpacking-tour__wrapper">
-          <h2 class="backpacking-tour__title">Hidden falls trail tour</h2>
-          <p class="backpacking-tour__subtitle">A long trail leads through the Big Woods to a fantastic hidden waterfall.</p>
           <div class="backpacking-tour__info">
+            <h2 class="backpacking-tour__title">Hidden falls trail tour</h2>
+            <p class="backpacking-tour__subtitle">A long trail leads through the Big Woods to a fantastic hidden waterfall.</p>
+          </div>
+          <div class="backpacking-tour__add">
             <p class="backpacking-tour__date">31.10.21</p>
             <button class="backpacking-tour__button button" type="button">See more</button>
           </div>
         </div>
       </section>
 
-      <section class="basic-classes">
+      <section class="basic-classes" id="app-classes" v-cloak>
         <div class="basic-classes__wrapper">
-          <h2 class="basic-classes__title">Hiking and camping classes</h2>
-          <ul class="basic-classes__list">
-            <li class="basic-classes__item">
-              <h4 class="basic-classes__caption">Backpacking</h4>
-              <p class="basic-classes__text">Our instructors explain how to choose and use equipment to maximize your comfort and fun.
-                You'll also learn about campsite selection, camp cooking, water treatment and Leave No Trace etiquette.
-              </p>
+          <h2 class="basic-classes__title">{{ title }}</h2>
+          <ul class="basic-classes__list" v-if="classes.length !== 0">
+            <li class="basic-classes__item" v-for="(item, idx) in classes">
+              <h4 class="basic-classes__caption">{{ item.caption }}</h4>
+              <p class="basic-classes__text">{{ item.text }}</p>
               <span class="basic-classes__info">
-                <p class="basic-classes__time">Duration: 8 hrs</p>
-                <p class="basic-classes__price">Price: $200</p>
-              </span>
-              <button class="basic-classes__button button" type="button">See more</button>
-            </li>
-            <li class="basic-classes__item">
-              <h4 class="basic-classes__caption">Hiking</h4>
-              <p class="basic-classes__text">From easy, low-elevation destinations to conditioning hikes where you'll reach a summit, we
-                have a hike for you. Learn about our beginning hiker seminars to help you be prepared before heading out.
-              </p>
-              <span class="basic-classes__info">
-                <p class="basic-classes__time">Duration: 10 hrs</p>
-                <p class="basic-classes__price">Price: $300</p>
-              </span>
-              <button class="basic-classes__button button" type="button">See more</button>
-            </li>
-            <li class="basic-classes__item">
-              <h4 class="basic-classes__caption">Camping</h4>
-              <p class="basic-classes__text">Our instructors will show you where to position your kitchen area, food storage, and tent site for
-                maximum safety and comfort. You'll learn practical camping skills for use in every situation.
-              </p>
-              <span class="basic-classes__info">
-                <p class="basic-classes__time">Duration: 7 hrs</p>
-                <p class="basic-classes__price">Price: $250</p>
+                <p class="basic-classes__time">Duration: {{ item.duration }}</p>
+                <p class="basic-classes__price">Price: {{ item.price }}</p>
               </span>
               <button class="basic-classes__button button" type="button">See more</button>
             </li>
           </ul>
+          <p class="basic-classes__warning" v-else>{{ warning }}</p>
         </div>
       </section>
 
@@ -198,10 +135,12 @@
           <div class="rock-climbing__main">
             <h2 class="rock-climbing__title">Rock climbing</h2>
             <p class="rock-climbing__subtitle">Classes & events</p>
-            <p class="rock-climbing__text">A four-day intensive course that provides beginners and indoor climbers with a foundation in outdoor climbing techniques and the principals of rock climbing technical systems.</p>
+            <p class="rock-climbing__text">A four-day intensive course that provides beginners and indoor climbers with a foundation
+              in outdoor climbing techniques and the principals of rock climbing technical systems.
+            </p>
             <p class="rock-climbing__info">10 modules<br> divided into 7 weekends</p>
           </div>
-          <div class="rock-climbing">
+          <div class="rock-climbing__add">
             <p class="rock-climbing__date">23.10.21<br> 20 hrs</p>
             <p class="rock-climbing__price">Price:<br> $900</p>
           </div>
@@ -213,10 +152,12 @@
           <div class="ice-climbing__main">
             <h2 class="ice-climbing__title">Ice climbing</h2>
             <p class="ice-climbing__subtitle">Classes & events</p>
-            <p class="ice-climbing__text">Climbers will learn the basics of ice climbing and top-rope climbing techniques - all the basics required to be a competent top-roping partner for more experienced climbers.</p>
+            <p class="ice-climbing__text">Climbers will learn the basics of ice climbing and top-rope climbing techniques - all the basics
+              required to be a competent top-roping partner for more experienced climbers.
+            </p>
             <p class="ice-climbing__info">12 modules<br> divided into 8 weekends</p>
           </div>
-          <div class="ice-climbing">
+          <div class="ice-climbing__add">
             <p class="ice-climbing__date">26.10.21<br> 28 hrs</p>
             <p class="ice-climbing__price">Price:<br> $1000</p>
           </div>
@@ -239,11 +180,11 @@
               </div>
               <div class="membership__field">
                 <label class="membership__label" for="phone">Phone</label>
-                <input class="membership__input" type="tel" name="phone" id="phone" placeholder="Enter your phone number">
+                <input class="membership__input" type="tel" name="phone" id="phone" placeholder="Enter phone number">
               </div>
               <div class="membership__field">
                 <label class="membership__label" for="email">Email</label>
-                <input class="membership__input" type="email" name="email" id="email" placeholder="Enter your email adress" required>
+                <input class="membership__input" type="email" name="email" id="email" placeholder="Enter email adress" required>
               </div>
             </fieldset>
             <button class="membership__button button" type="submit">Join</button>
@@ -288,33 +229,35 @@
           </p>
           <a class="page-footer__logo" href="#">Hiking Life</a>
         </div>
-      </div>
-      <div class="page-footer__block">
-        <h4 class="page-footer__caption">Contacts</h4>
-        <ul class="page-footer__contacts contacts">
-          <li class="contacts__item">
-            1214 Munson Dr, Ashland, Oregon(OR), 97520
-          </li>
-          <li class="contacts__item">
-            <a class="contacts__link" href="tel:+19550180101">+1(955)-018-01-01</a>
-          </li>
-          <li class="contacts__item">
-            <a  class="contacts__link" href="mailto:hikinglife@yahoo.com">hikinglife@yahoo.com</a>
-          </li>
-        </ul>
-      </div>
-      <div class="page-footer__block">
-        <h4 class="page-footer__caption">Explore</h4>
-        <a class="page-footer__link" href="#">Membership</a>
-        <a class="page-footer__link" href="#">Newsroom</a>
-        <a class="page-footer__link" href="#">Store</a>
-        <a class="page-footer__link" href="#">Blog</a>
-      </div>
-      <div class="page-footer__block">
-        <h4 class="page-footer__caption">Get our apps</h4>
-        <a class="page-footer__link page-footer__link--appstore" href="https://www.apple.com/ru/app-store/">App Store</a>
-        <a class="page-footer__link page-footer__link--googleplay" href="https://play.google.com/store/">Google Play</a>
+        <div class="page-footer__block">
+          <h4 class="page-footer__caption">Contacts</h4>
+          <ul class="page-footer__contacts contacts">
+            <li class="contacts__item">
+              1214 Munson Dr, Ashland, Oregon(OR), 97520
+            </li>
+            <li class="contacts__item">
+              <a class="contacts__link" href="tel:+19550180101">+1(955)-018-01-01</a>
+            </li>
+            <li class="contacts__item">
+              <a  class="contacts__link" href="mailto:hikinglife@yahoo.com">hikinglife@yahoo.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="page-footer__block">
+          <h4 class="page-footer__caption">Explore</h4>
+          <a class="page-footer__link" href="#">Membership</a>
+          <a class="page-footer__link" href="#">Newsroom</a>
+          <a class="page-footer__link" href="#">Store</a>
+          <a class="page-footer__link" href="#">Blog</a>
+        </div>
+        <div class="page-footer__block">
+          <h4 class="page-footer__caption">Get our apps</h4>
+          <a class="page-footer__link page-footer__link--appstore" href="https://www.apple.com/ru/app-store/">App Store</a>
+          <a class="page-footer__link page-footer__link--googleplay" href="https://play.google.com/store/">Google Play</a>
+        </div>
       </div>
     </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
