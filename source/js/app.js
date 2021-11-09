@@ -1,21 +1,28 @@
+//Компоненты Vue для разделов resources, places и basic-classes
+
 const AppResources = {
   data() {
     return {
       title: 'Hiking resources for your next hike',
-      resources: [
-        {
-          caption: 'Before you go',
-          text: 'Start by making sure you’re carrying the Ten Essentials. This is a collection of gear and clothing that all hikers should carry whenever they step onto the trail.',
-          date: '15.10.21',
-          rating: 5
-        },
-        {
-          caption: 'What to wear',
-          text: 'Choose clothing made of quick-drying, moisture-wicking fabrics, such as wool or polyester. Avoid cotton, which takes a long time to dry when wet.',
-          date: '19.10.21',
-          rating: 4
+      resources: []
+    }
+  },
+  async created() {
+    try {
+      const response = await fetch('https://api.jsonbin.io/b/61851822dfffdf47a490a25d', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'secret-key': '$2b$10$zSd0ohZ8a/hueRrKb.vCUOJ9bKrHBi.lzXYggmzIv1SZZzwMrzSla'
         }
-      ]
+      });
+      const data = await response.json();
+      if(!data) {
+        throw new Error('Resources list is empty now. Please reload this page.')
+      }
+      this.resources = data;
+    } catch(e) {
+      console.error(e);
     }
   }
 };
@@ -46,12 +53,25 @@ const AppPlaces = {
           url: 'img/trail_ridge_road.png',
         }
       ],
-      warning: 'COVID-19 update: We are offering some of our top classes and day trips with extra precautions. Text us: hikinglife@yahoo.com.'
+      warning: 'COVID-19 update: We are offering some of our top classes and day trips with extra precautions. Text us: hikinglife@yahoo.com.',
+      currentIndex: 0,
+      windowWidth: window.visualViewport.width
     }
   },
   methods: {
     showWarning(idx) {
       this.places[idx].text = this.warning;
+    },
+    showWarningMob() {
+      this.places[this.currentIndex].text = this.warning;
+    },
+    setCurrent(i) {
+      this.currentIndex = i;
+    }
+  },
+  computed: {
+    currentPlace() {
+      return this.places[this.currentIndex];
     }
   }
 };
@@ -65,7 +85,7 @@ const AppClasses = {
       classes: [
         {
           caption: 'Backpacking',
-          text: 'Our instructors explain how to choose and use equipment to maximize your comfort and fun. You will also learn about campsite selection, camp cooking, water treatment and Leave No Trace etiquette.',
+          text: 'Our instructors explain how to choose and use equipment to maximize your comfort. You will also learn about campsite selection, camp cooking, water treatment and Leave No Trace etiquette.',
           duration: '8 hrs',
           price: '$200'
         },
@@ -82,7 +102,27 @@ const AppClasses = {
           price: '$250'
         }
       ],
-      warning: 'Unfortunately there are no available classes for today. Please wait weekly information update.'
+      currentIndex: 0,
+      windowWidth: window.visualViewport.width
+    }
+  },
+  methods: {
+    nextClick() {
+      this.currentIndex !== this.classes.length - 1 ? this.currentIndex += 1 : '';
+    },
+    prevClick() {
+      this.currentIndex !== 0 ? this.currentIndex -= 1 : '';
+    }
+  },
+  computed: {
+    currentClass() {
+      return this.classes[this.currentIndex];
+    },
+    disabledPrev() {
+      return this.currentIndex === 0;
+    },
+    disabledNext() {
+      return this.currentIndex === this.classes.length - 1;
     }
   }
 };

@@ -36,6 +36,37 @@
   flex-wrap: @break;
 }
 
+//добавление псевдоэлемента в виде угла
+.angle(@color, @side) when (@side = left){
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid @color;
+  border-left: 3px solid @color;
+}
+
+.angle(@color, @side) when (@side = right){
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid @color;
+  border-right: 3px solid @color;
+}
+
+//добавление псевдоэлемента в виде линии
+.line(@color) {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid @color;
+}
+
 //выбор шрифта
 .nunito {
   font-family: 'Nunito', 'Arial', sans-serif;

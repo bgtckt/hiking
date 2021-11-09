@@ -1,5 +1,4 @@
 .ice-climbing {
-  .outline(blue);
   width: @desktop-width;
   color: @color-green;
   background: url('../img/ice_climbing_bg.png') bottom no-repeat @color-light;
@@ -20,7 +19,6 @@
 }
 
 .ice-climbing__wrapper {
-  //.outline(red);
   .cont-pos(70px, 253px);
   .flex(row, nowrap);
   justify-content: space-between;
@@ -56,7 +54,6 @@
 }
 
 .ice-climbing__main {
-  //.outline(chocolate);
   width: 531px;
 }
 
@@ -73,7 +70,6 @@
 }
 
 .ice-climbing__title {
-  //.outline(blue);
   display: inline-block;
   width: 245px;
   margin: 0;
@@ -83,27 +79,15 @@
   position: relative;
 
   &::before {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-green, left);
     bottom: -35px;
     left: -29px;
-    width: 36px;
-    height: 36px;
-    border-bottom: 3px solid @color-green;
-    border-left: 3px solid @color-green;
   }
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-green, right);
     top: -22px;
     right: 130px;
-    width: 36px;
-    height: 36px;
-    border-top: 3px solid @color-green;
-    border-right: 3px solid @color-green;
   }
 }
 
@@ -118,7 +102,6 @@
 }
 
 .ice-climbing__subtitle {
-  //.outline(blue);
   margin-top: 43px;
   margin-bottom: 0;
   .bebas;
@@ -126,7 +109,6 @@
 }
 
 .ice-climbing__text {
-  //.outline(blue);
   margin-top: 18px;
   margin-bottom: 0;
   .bitter;
@@ -142,7 +124,6 @@
 }
 
 .ice-climbing__info {
-  //.outline(blue);
   margin-top: 33px;
   margin-bottom: 0;
   padding-top: 32px;
@@ -160,7 +141,6 @@
 }
 
 .ice-climbing__add {
-  //.outline(chocolate);
   width: 241px;
   .flex(row, wrap);
   justify-content: space-between;
@@ -196,7 +176,6 @@
 }
 
 .ice-climbing__date {
-  //.outline(blue);
   display: block;
   width: 100px;
   margin: 0;
@@ -211,7 +190,6 @@
 }
 
 .ice-climbing__price {
-  //.outline(blue);
   display: block;
   width: 82px;
   margin: 0;

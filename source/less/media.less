@@ -1,5 +1,4 @@
 .media {
-  .outline(blue);
   width: @desktop-width;
   color: @color-light;
   background: url('../img/media_bg.png') center no-repeat @color-dark;
@@ -19,7 +18,6 @@
 }
 
 .media__wrapper {
-  //.outline(red);
   .cont-pos(150px, 150px);
 }
 
@@ -36,7 +34,6 @@
 }
 
 .media__title {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 58px;
@@ -44,27 +41,15 @@
   position: relative;
 
   &::before {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-light, left);
     bottom: 0;
     right: 362px;
-    width: 36px;
-    height: 36px;
-    border-bottom: 3px solid @color-light;
-    border-left: 3px solid @color-light;
   }
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-light, right);
     top: 0px;
     right: -36px;
-    width: 36px;
-    height: 36px;
-    border-top: 3px solid @color-light;
-    border-right: 3px solid @color-light;
   }
 }
 
@@ -89,7 +74,6 @@
 }
 
 .media__subtitle {
-  //.outline(blue);
   margin-top: 25px;
   margin-bottom: 0;
   .bebas;
@@ -104,7 +88,6 @@
 }
 
 .media__text {
-  //.outline(blue);
   margin-top: 25px;
   margin-bottom: 0;
   padding-left: 645px;
@@ -114,14 +97,9 @@
   position: relative;
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .line(@color-light);
     bottom: -30px;
     right: 480px;
-    width: 95px;
-    height: 1px;
-    border-bottom: 9px solid @color-light;
   }
 }
 
@@ -147,7 +125,6 @@
 }
 
 .media__list {
-  //.outline(gray);
   margin: 0;
   position: relative;
 

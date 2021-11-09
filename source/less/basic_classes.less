@@ -1,5 +1,4 @@
 .basic-classes {
-  .outline(blue);
   width: @desktop-width;
   background-color: @color-light;
   color: @color-green;
@@ -18,7 +17,6 @@
 }
 
 .basic-classes__wrapper {
-  //.outline(red);
   .cont-pos(107px, 115px);
   position: relative;
 
@@ -72,7 +70,6 @@
 
 
 .basic-classes__title {
-  //.outline(blue);
   display: inline-block;
   width: 495px;
   margin: 0;
@@ -82,14 +79,9 @@
   position: relative;
 
   &::before {
-    position: absolute;
-    display: block;
-    content: '';
+    .line(@color-green);
     bottom: -33px;
     left: 0;
-    width: 95px;
-    height: 1px;
-    border-bottom: 9px solid @color-green;
   }
 }
 
@@ -100,7 +92,6 @@
 }
 
 .basic-classes__list {
-  //.outline(gray);
   margin-top: 83px;
   margin-bottom: 0;
   padding: 0;
@@ -110,7 +101,6 @@
 }
 
 .basic-classes__item {
-  //.outline(chocolate);
   width: 327px;
   padding-top: 180px;
   text-align: center;
@@ -148,14 +138,12 @@
 }
 
 .basic-classes__caption {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 42px;
 }
 
 .basic-classes__text {
-  //.outline(blue);
   margin-top: 32px;
   margin-bottom: 0;
   .raleway;
@@ -170,7 +158,6 @@
 }
 
 .basic-classes__info {
-  //.outline(gold);
   display: block;
   margin-top: 27px;
   margin-bottom: 0;
@@ -181,12 +168,10 @@
 }
 
 .basic-classes__time {
-  //.outline(blue);
   margin: 0;
 }
 
 .basic-classes__price {
-  //.outline(blue);
   margin: 0;
 }
 
@@ -196,13 +181,11 @@
   background-color: @color-green;
 
   &:hover {
-    color: @color-dark;
-    background-color: @color-light;
+    background-color: @color-dark;
   }
 
   &:active {
-    color: lighten(@color-dark, 30%);
-    background-color: @color-light;
+    background-color: lighten(@color-dark, 30%);
   }
 }
 
@@ -212,13 +195,27 @@
 
 @media (max-width: @mob-width) {
   .basic-classes__toggles {
-    display: block;
+    margin-top: 30px;
+    .flex(row, nowrap);
+    justify-content: space-around;
   }
 }
 
-.basic-classes__warning {
-  margin-top: 50px;
-  .bebas;
-  font-size: 25px;
-  color: @color-purple;
+.basic-classes__toggle {
+  width: 120px;
+  color: @color-light;
+  background-color: @color-dark;
+
+  &:hover {
+    background-color: @color-purple;
+  }
+
+  &:active {
+    background-color: lighten(@color-purple, 20%);
+  }
+
+  &:disabled {
+    cursor: default;
+    background-color: @color-shadow;
+  }
 }

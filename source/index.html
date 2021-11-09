@@ -3,6 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="fonts/Raleway-Regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/Raleway-Bold.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/Nunito-Light.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/Nunito-Bold.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/Bitter-Regular.woff2" as="font" crossorigin>
+    <link rel="preload" href="fonts/BebasNeueRegular.woff2" as="font" crossorigin>
     <link rel="stylesheet" href="css/style.min.css">
     <title>Hiking Life</title>
   </head>
@@ -10,23 +16,23 @@
     <header class="page-header">
       <div class="page-header__wrapper">
         <div class="page-header__top">
-          <a class="page-header__logo" href="#">Hiking Life</a>
+          <a class="page-header__logo" href="index.html">Hiking Life</a>
           <nav class="page-header__nav main-nav main-nav--closed">
             <ul class="main-nav__list">
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Home</a>
+                <a class="main-nav__link" href="index.html">Home</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Classes</a>
+                <a class="main-nav__link" href="#" id="classes-link">Classes</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Tours</a>
+                <a class="main-nav__link" href="#" id="tours-link">Tours</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Resources</a>
+                <a class="main-nav__link" href="#" id="resources-link">Resources</a>
               </li>
               <li class="main-nav__item">
-                <a class="main-nav__link" href="#">Contacts</a>
+                <a class="main-nav__link" href="#" id="contacts-link">Contacts</a>
               </li>
             </ul>
           </nav>
@@ -72,7 +78,12 @@
         <div class="hiking-tour__wrapper">
           <div class="hiking-tour__info">
             <h2 class="hiking-tour__title">Morrison and Rimrock Trails hiking tour</h2>
-            <p class="hiking-tour__subtitle">A beautiful and challenging trek with great views of the Allegheny Reservoir.</p>
+            <p class="hiking-tour__subtitle">A beautiful and challenging trek with great views of the
+              <span id="hiking-popup">Allegheny Reservoir.</span>
+            </p>
+            <span class="hiking-tour__popup popup">
+              Lush green forest surrounds the 7,647-acre reservoir that spans the border between Pennsylvania and New York
+            </span>
           </div>
           <div class="hiking-tour__add">
             <p class="hiking-tour__date">30.10.21</p>
@@ -84,7 +95,18 @@
       <section class="places" id="app-places" v-cloak>
         <div class="places__wrapper">
           <h2 class="places__title">{{ title }}</h2>
-          <ul class="places__list">
+          <ul class="places__list" v-if="windowWidth <= 320">
+            <li class="places__item">
+              <img class="places__pic" :src=currentPlace.url width="273" height="273" :alt=currentPlace.caption>
+              <div class="places__info">
+                <button class="places__more button" type="button" @click="showWarningMob">More</button>
+                <h4 class="places__caption">{{ currentPlace.caption }}</h4>
+                <p class="places__text">{{ currentPlace.text }}</p>
+                <p class="places__length">Route length: {{ currentPlace.length }}</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="places__list" v-else>
             <li class="places__item" v-for="(place, idx) in places">
               <img class="places__pic" :src=place.url width="273" height="273" :alt=place.caption>
               <div class="places__info">
@@ -95,9 +117,14 @@
               </div>
             </li>
           </ul>
-          <button class="places__button button" type="button">See more</button>
           <div class="places__toggles toggles">
-            <svg v-for="(item, i) in places" class="toggles__button" width="20" height="20">
+            <svg
+              v-for="(item, i) in places"
+              @click="setCurrent(i)"
+              class="toggles__button"
+              :class="{'toggles__button--current' : i === currentIndex}"
+              width="20" height="20"
+            >
               <rect width="100%" height="100%"/>
             </svg>
           </div>
@@ -108,7 +135,13 @@
         <div class="backpacking-tour__wrapper">
           <div class="backpacking-tour__info">
             <h2 class="backpacking-tour__title">Hidden falls trail tour</h2>
-            <p class="backpacking-tour__subtitle">A long trail leads through the Big Woods to a fantastic hidden waterfall.</p>
+            <p class="backpacking-tour__subtitle">
+              A long trail leads through the Big Woods to a fantastic
+              <span id="backpacking-popup">hidden waterfall.</span>
+            </p>
+            <span class="backpacking-tour__popup popup">
+              Spring-fed falls close to Minnehaha, in Hidden Falls Regional Park
+            </span>
           </div>
           <div class="backpacking-tour__add">
             <p class="backpacking-tour__date">31.10.21</p>
@@ -120,7 +153,18 @@
       <section class="basic-classes" id="app-classes" v-cloak>
         <div class="basic-classes__wrapper">
           <h2 class="basic-classes__title">{{ title }}</h2>
-          <ul class="basic-classes__list" v-if="classes.length !== 0">
+          <ul class="basic-classes__list" v-if="windowWidth <= 320">
+            <li class="basic-classes__item">
+              <h4 class="basic-classes__caption">{{ currentClass.caption }}</h4>
+              <p class="basic-classes__text">{{ currentClass.text }}</p>
+              <span class="basic-classes__info">
+                <p class="basic-classes__time">Duration: {{ currentClass.duration }}</p>
+                <p class="basic-classes__price">Price: {{ currentClass.price }}</p>
+              </span>
+              <button class="basic-classes__button button" type="button">See more</button>
+            </li>
+          </ul>
+          <ul class="basic-classes__list" v-else>
             <li class="basic-classes__item" v-for="(item, idx) in classes">
               <h4 class="basic-classes__caption">{{ item.caption }}</h4>
               <p class="basic-classes__text">{{ item.text }}</p>
@@ -131,12 +175,48 @@
               <button class="basic-classes__button button" type="button">See more</button>
             </li>
           </ul>
-          <p class="basic-classes__warning" v-else>{{ warning }}</p>
-          <div class="basic-classes__toggles toggles">
-            <svg v-for="(item, i) in classes" class="toggles__button" width="20" height="20">
-              <rect width="100%" height="100%"/>
-            </svg>
+          <div class="basic-classes__toggles">
+            <button
+              @click="prevClick"
+              class="basic-classes__toggle basic-classes__toggle--prev button"
+              type="button"
+              :disabled="disabledPrev"
+            >Prev</button>
+            <button
+              @click="nextClick"
+              class="basic-classes__toggle basic-classes__toggle--next button"
+              type="button"
+              :disabled="disabledNext"
+            >Next</button>
           </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="gallery__wrapper">
+          <h2 class="gallery__title">Photo gallery</h2>
+          <p class="gallery__subtitle">Best subscribers photos from our trails</p>
+          <ul class="gallery__list">
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic1.png" srcset="img/gallery_pic1_2x.png 2x" alt="Subscribers photo">
+            </li>
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic2.png" srcset="img/gallery_pic2_2x.png 2x" alt="Subscribers photo">
+            </li>
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic3.png" srcset="img/gallery_pic3_2x.png 2x" alt="Subscribers photo">
+            </li>
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic4.png" srcset="img/gallery_pic4_2x.png 2x" alt="Subscribers photo">
+            </li>
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic5.png" srcset="img/gallery_pic5_2x.png 2x" alt="Subscribers photo">
+            </li>
+            <li class="gallery__item">
+              <img  class="gallery__photo" src="img/gallery_pic6.png" srcset="img/gallery_pic6_2x.png 2x" alt="Subscribers photo">
+            </li>
+          </ul>
+          <button class="gallery__button button" type="button">See more</button>
         </div>
       </section>
 
@@ -145,7 +225,7 @@
           <div class="rock-climbing__main">
             <h2 class="rock-climbing__title">Rock climbing</h2>
             <p class="rock-climbing__subtitle">Classes & events</p>
-            <p class="rock-climbing__text">A four-day intensive course that provides beginners and indoor climbers with a foundation
+            <p class="rock-climbing__text">A seven-day intensive course that provides beginners and indoor climbers with a foundation
               in outdoor climbing techniques and the principals of rock climbing technical systems.
             </p>
             <p class="rock-climbing__info">10 modules<br> divided into 7 weekends</p>
@@ -202,6 +282,46 @@
         </div>
       </section>
 
+      <section class="levels">
+        <div class="levels__wrapper">
+          <h2 class="levels__title">What level of hiker are you?</h2>
+          <p class="levels__subtitle">Determining your hiking level</p>
+          <div class="levels__slider slider">
+            <ul class="slider__captions">
+              <li class="slider__caption">Novice</li>
+              <li class="slider__caption">Moderate</li>
+              <li class="slider__caption">Advanced</li>
+              <li class="slider__caption">Expert</li>
+            </ul>
+            <input class="slider__bar" type="range" min="1" max="100" value="1" step="33" id="levels-slider">
+          </div>
+          <div class="levels__info">
+            <p class="levels__text">Someone who is new to hiking or has little experience with hiking. A pace for a beginning hiker would be slow or easy paced.
+              This person may not exercise in other areas of their life. Or they may and just be new to hiking.
+              Elevation gains and distances are minimal. Surfaces are generally flat with minimal difficult terrain.
+            </p>
+          </div>
+          <div class="levels__info">
+            <p class="levels__text">A person new to hiking but still unfamiliar with different types of terrain or elevation gains. They may have experienced hikes
+              of a few hours with small levels of inclines of 500-1000 feet. An advanced novice hiker hikes at a generally easy pace but may have to take breaks
+              more frequently as the distance or elevation of the hike increases.
+            </p>
+          </div>
+          <div class="levels__info">
+            <p class="levels__text">This type of person hikes on a more regular basis. This type of person may also partake in more frequent types of exercise in
+              other aspects of their life. Hikes can last for half a day and have elevation gains of a few thousand feet. A moderate hiker will be able to hike at
+              a faster pace and be able to handle longer inclines without feeling exhausted.
+            </p>
+          </div>
+          <div class="levels__info">
+            <p class="levels__text">This type of hiker has had much experience with day hikes and hiking in different weather conditions. At this point, the hiker is
+              prepared to be out there throughout the night, has the knowledge of when to hike at a fast pace, at a slow pace to conserve energy, and when to rest.
+              This type of hiker will be able to plan hikes of up to a few days and how to plan accordingly.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section class="media">
         <div class="media__wrapper">
           <h2 class="media__title">Let's get social</h2>
@@ -237,7 +357,7 @@
           <p class="page-footer__text">At Hiking Life we believe that a life outdoors is a life well lived.
             We've been sharing our passion for the outdoors since 1990.
           </p>
-          <a class="page-footer__logo" href="#">Hiking Life</a>
+          <a class="page-footer__logo" href="index.html">Hiking Life</a>
         </div>
         <div class="page-footer__block">
           <h4 class="page-footer__caption">Contacts</h4>
@@ -268,6 +388,10 @@
       </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="js/app.js"></script>
+    <script src="js/main_nav_mob.min.js"></script>
+    <script src="js/scroll_page.min.js"></script>
+    <script src="js/levels_slider.min.js"></script>
+    <script src="js/app.min.js"></script>
+    <script src="js/popup.min.js"></script>
   </body>
 </html>

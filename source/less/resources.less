@@ -1,5 +1,4 @@
 .resources {
-  .outline(blue);
   width: @desktop-width;
   background-color: @color-light;
   position: relative;
@@ -38,7 +37,6 @@
 }
 
 .resources__wrapper {
-  //.outline(red);
   .cont-pos(91px, 91px);
 }
 
@@ -49,7 +47,6 @@
 }
 
 .resources__title {
-  //.outline(blue);
   display: inline-block;
   width: 485px;
   margin: 0;
@@ -59,14 +56,9 @@
   position: relative;
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .line(@color-dark);
     bottom: -30px;
     left: 0;
-    width: 95px;
-    height: 1px;
-    border-bottom: 9px solid @color-dark;
   }
 }
 
@@ -77,7 +69,6 @@
 }
 
 .resources__list {
-  //.outline(gray);
   margin-top: 100px;
   margin-bottom: 0;
   padding: 0;
@@ -99,7 +90,6 @@
 }
 
 .resources__item {
-  //.outline(chocolate);
   box-sizing: border-box;
   width: 588px;
   padding: 47px;
@@ -136,7 +126,6 @@
 }
 
 .resources__caption {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 42px;
@@ -144,7 +133,6 @@
 }
 
 .resources__text {
-  //.outline(blue);
   display: inline-block;
   width: 350px;
   margin: 0;
@@ -165,14 +153,12 @@
 }
 
 .resources__info {
-  //.outline(gold);
   margin-top: 35px;
   padding-top: 37px;
   border-top: 3px solid @color-dark;
 }
 
 .resources__date {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 38px;
@@ -180,7 +166,6 @@
 }
 
 .resources__rating {
-  //.outline(blue);
   margin-top: 17px;
 }
 

@@ -1,5 +1,4 @@
 .backpacking-tour {
-  .outline(blue);
   width: @desktop-width;
   color: @color-white;
   background: url('../img/backpacking_tour_bg.png') center no-repeat;
@@ -19,7 +18,6 @@
 }
 
 .backpacking-tour__wrapper {
-  //.outline(red);
   .cont-pos(107px, 87px);
   .flex(row, nowrap);
   justify-content: space-between;
@@ -33,33 +31,20 @@
 }
 
 .backpacking-tour__info {
-  //.outline(chocolate);
   width: 795px;
   text-align: right;
   position: relative;
 
   &::before {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-white, left);
     top: 322px;
     left: -24px;
-    width: 36px;
-    height: 36px;
-    border-bottom: 3px solid @color-white;
-    border-left: 3px solid @color-white;
   }
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .angle(@color-white, right);
     top: -14px;
     right: -4px;
-    width: 36px;
-    height: 36px;
-    border-top: 3px solid @color-white;
-    border-right: 3px solid @color-white;
   }
 }
 
@@ -89,7 +74,6 @@
 }
 
 .backpacking-tour__title {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 100px;
@@ -109,12 +93,16 @@
 }
 
 .backpacking-tour__subtitle {
-  //.outline(blue);
   margin-top: 23px;
   margin-bottom: 0;
   .bebas;
   font-size: 50px;
   line-height: 1;
+
+  & span {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: @mob-width) {
@@ -123,8 +111,29 @@
   }
 }
 
+.backpacking-tour__popup {
+  right: 30px;
+  bottom: -40px;
+}
+
+@media (max-width: @tablet-width) {
+  .backpacking-tour__popup {
+    right: 0px;
+    bottom: -55px;
+  }
+}
+
+@media (max-width: @mob-width) {
+  .backpacking-tour__popup {
+    width: 60px;
+    padding: 5px;
+    font-size: 10px;
+    left: 48px;
+    bottom: -70px;
+  }
+}
+
 .backpacking-tour__add {
-  //.outline(chocolate);
   width: 189px;
   margin-top: 200px;
   order: -1;
@@ -138,7 +147,6 @@
 }
 
 .backpacking-tour__date {
-  //.outline(blue);
   margin: 0;
   .bebas;
   font-size: 50px;
@@ -147,14 +155,9 @@
   position: relative;
 
   &::after {
-    position: absolute;
-    display: block;
-    content: '';
+    .line(@color-white);
     bottom: -30px;
     right: 0;
-    width: 95px;
-    height: 1px;
-    border-bottom: 9px solid @color-light;
   }
 }
 
