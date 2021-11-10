@@ -31,7 +31,7 @@
   width: 443px;
   margin: 0;
   .bebas;
-  font-size: 75px;
+  font-size: 73px;
   line-height: 1;
   position: relative;
 
@@ -48,6 +48,15 @@
   }
 }
 
+@media (max-width: @tablet-width) {
+  .places__title {
+
+    &::before {
+      left: -10px;
+    }
+  }
+}
+
 @media (max-width: @mob-width) {
   .places__title {
     width: @cont-width-mob;
@@ -55,7 +64,6 @@
 
     &::before {
       bottom: -10px;
-      left: -10px;
     }
 
     &::after {
@@ -139,7 +147,7 @@
   margin-bottom: 0;
   padding: 0 23px;
   .bebas;
-  font-size: 37px;
+  font-size: 35px;
 }
 
 @media (max-width: @mob-width) {
