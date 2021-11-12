@@ -1,0 +1,3422 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('../fonts/Nunito-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bitter';
+  src: url('../fonts/Bitter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('../fonts/BebasNeueRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  min-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  color: #32455f;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.no-list {
+  list-style: none;
+}
+
+.no-line {
+  text-decoration: none;
+}
+
+.nunito {
+  font-family: 'Nunito', 'Arial', sans-serif;
+}
+
+.bebas {
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+}
+
+.raleway {
+  font-family: 'Raleway', 'Arial', sans-serif;
+}
+
+.bitter {
+  font-family: 'Bitter', 'Times New Roman', serif;
+  letter-spacing: 0.075em;
+}
+
+.button {
+  display: inline-block;
+  width: 189px;
+  height: 34px;
+  text-align: center;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  word-wrap: break-word;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+}
+
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.rating__markers {
+  display: block;
+  width: 78px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rating__marker {
+  display: block;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  stroke: #32455f;
+  fill: none;
+}
+
+.rating__marker--filled {
+  fill: #32455f;
+}
+
+.rating__value {
+  display: inline-block;
+  width: 37px;
+  margin: 0 0 0 19px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+.toggles {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.toggles__button {
+  margin-right: 19px;
+  cursor: pointer;
+  fill: #5f6551;
+}
+
+.toggles__button--current {
+  fill: #564b67;
+}
+
+.toggles__button:last-of-type {
+  margin-right: 0;
+}
+
+.toggles__button:hover {
+  fill: #32455f;
+}
+
+.slider {
+  width: 728px;
+}
+
+.slider__captions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.slider__caption {
+  font-family: 'Nunito', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.slider__bar {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin-top: 15px;
+  margin-bottom: 0;
+  width: 100%;
+  height: 15px;
+  outline: none;
+  background-color: #fff;
+  opacity: 0.7;
+  -webkit-box-shadow: inset 0px 3px 3px 0px rgba(2, 4, 0, 0.2);
+          box-shadow: inset 0px 3px 3px 0px rgba(2, 4, 0, 0.2);
+}
+
+.slider__bar:hover {
+  opacity: 1;
+}
+
+.slider__bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-color: #32455f;
+}
+
+.slider__bar::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: #32455f;
+}
+
+.social {
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.social__item {
+  width: 46px;
+  height: 46px;
+  margin-right: 10px;
+}
+
+.social__item:last-of-type {
+  margin-right: 0;
+}
+
+.social__item {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.social__item:last-of-type {
+  margin-right: 0;
+}
+
+.social__link {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  background: center no-repeat;
+  -webkit-filter: invert(88%) sepia(2%) saturate(857%) hue-rotate(357deg) brightness(114%) contrast(97%);
+          filter: invert(88%) sepia(2%) saturate(857%) hue-rotate(357deg) brightness(114%) contrast(97%);
+}
+
+.social__link--facebook {
+  background: url('../img/facebook.png');
+}
+
+.social__link--twitter {
+  background: url('../img/twitter.png');
+}
+
+.social__link--instagram {
+  background: url('../img/instagram.png');
+}
+
+.social__link--youtube {
+  background: url('../img/youtube.png');
+}
+
+.social__link--linkedin {
+  background: url('../img/linkedin.png');
+}
+
+.social__link:hover {
+  -webkit-filter: brightness(0) saturate(100%) invert(30%) sepia(10%) saturate(1202%) hue-rotate(222deg) brightness(94%) contrast(90%);
+          filter: brightness(0) saturate(100%) invert(30%) sepia(10%) saturate(1202%) hue-rotate(222deg) brightness(94%) contrast(90%);
+}
+
+.social__link:active {
+  -webkit-filter: brightness(0) saturate(100%) invert(24%) sepia(18%) saturate(1198%) hue-rotate(175deg) brightness(93%) contrast(88%);
+          filter: brightness(0) saturate(100%) invert(24%) sepia(18%) saturate(1198%) hue-rotate(175deg) brightness(93%) contrast(88%);
+}
+
+.popup {
+  visibility: hidden;
+  width: 280px;
+  padding: 10px;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.popup::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 46%;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+}
+
+.popup--show {
+  visibility: visible;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.contacts {
+  list-style: none;
+  padding: 0;
+}
+
+.contacts__item {
+  line-height: 29px;
+}
+
+.contacts__link {
+  text-decoration: none;
+  color: #5f6551;
+}
+
+.contacts__link:hover {
+  font-weight: 700;
+}
+
+.contacts__link:active {
+  color: #32455f;
+}
+
+.page-header {
+  width: 1440px;
+  background: url('../img/page_header_bg.png') 0% 100% no-repeat #fbfbf5;
+  overflow: hidden;
+}
+
+.page-header__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 69px;
+  padding-bottom: 406px;
+}
+
+.page-header__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.page-header__top::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 16px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: url("../img/search_pic.png") no-repeat;
+}
+
+.page-header__bottom {
+  width: 364px;
+  margin-top: 77px;
+  padding: 0 0 24px 18px;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  position: relative;
+}
+
+.page-header__bottom::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #32455f;
+  border-left: 3px solid #32455f;
+  bottom: 0;
+  left: 0;
+}
+
+.page-header__logo {
+  display: block;
+  width: 211px;
+  height: 41px;
+  font-size: 0;
+  background-image: url('../img/logo.png');
+}
+
+.page-header__logo:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.page-header__search {
+  width: 189px;
+  height: 33px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 15px;
+  margin-top: 10px;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  background-color: #fff;
+  border-radius: 25px;
+  border: none;
+  -webkit-box-shadow: inset 0px 5px 5px 0px rgba(2, 4, 0, 0.2);
+          box-shadow: inset 0px 5px 5px 0px rgba(2, 4, 0, 0.2);
+}
+
+.page-header__search::-webkit-input-placeholder {
+  color: #32455f;
+}
+
+.page-header__search::-moz-placeholder {
+  color: #32455f;
+}
+
+.page-header__search:-ms-input-placeholder {
+  color: #32455f;
+}
+
+.page-header__search::-ms-input-placeholder {
+  color: #32455f;
+}
+
+.page-header__search::placeholder {
+  color: #32455f;
+}
+
+.page-header__search:focus {
+  outline: none;
+  -webkit-box-shadow: 260px -200px 0 400px rgba(0, 0, 0, 0.6);
+          box-shadow: 260px -200px 0 400px rgba(0, 0, 0, 0.6);
+}
+
+.page-header__button {
+  display: none;
+}
+
+.page-header__title {
+  margin: 0;
+  font-size: 75px;
+  line-height: 1;
+}
+
+.page-header__subtitle {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 38px;
+  line-height: 45px;
+  letter-spacing: 0.075em;
+}
+
+.main-nav {
+  width: 622px;
+}
+
+.main-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-nav__item {
+  padding-top: 14px;
+}
+
+.main-nav__link {
+  text-decoration: none;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  color: #32455f;
+}
+
+.main-nav__link:hover {
+  font-weight: 700;
+  letter-spacing: -0.45px;
+  border-bottom: 2px solid #32455f;
+}
+
+.main-nav__link:active {
+  color: #7490b6;
+  font-weight: 700;
+  border-bottom: 2px solid #32455f;
+}
+
+.page-main {
+  width: 1440px;
+}
+
+.resources {
+  width: 1440px;
+  background-color: #fbfbf5;
+  position: relative;
+}
+
+.resources::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 91px;
+  right: 50px;
+  width: 23px;
+  height: 667px;
+  background-image: url('../img/resources_x.png');
+}
+
+.resources__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 91px;
+  padding-bottom: 91px;
+}
+
+.resources__title {
+  display: inline-block;
+  width: 485px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 58px;
+  line-height: 1;
+  position: relative;
+}
+
+.resources__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #32455f;
+  bottom: -30px;
+  left: 0;
+}
+
+.resources__list {
+  margin-top: 100px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.resources__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 588px;
+  padding: 47px;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(2, 4, 0, 0.2);
+          box-shadow: 0px 5px 10px 0px rgba(2, 4, 0, 0.2);
+  border-radius: 10px;
+  background-position: 400px 122px;
+  background-repeat: no-repeat;
+}
+
+.resources__item:first-of-type {
+  background-image: url('../img/resources_pic1.png');
+}
+
+.resources__item:last-of-type {
+  background-image: url('../img/resources_pic2.png');
+}
+
+.resources__caption {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+  line-height: 41px;
+}
+
+.resources__text {
+  display: inline-block;
+  width: 350px;
+  margin: 0;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 21px;
+  line-height: 41px;
+  font-weight: 700;
+}
+
+.resources__info {
+  margin-top: 35px;
+  padding-top: 37px;
+  border-top: 3px solid #32455f;
+}
+
+.resources__date {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 38px;
+  line-height: 41px;
+}
+
+.resources__rating {
+  margin-top: 17px;
+}
+
+.resources__button {
+  margin-top: 17px;
+  color: #fff;
+  background-color: #32455f;
+}
+
+.resources__button:hover {
+  background-color: #564b67;
+}
+
+.resources__button:active {
+  background-color: #887a9e;
+}
+
+.hiking-tour {
+  width: 1440px;
+  color: #fff;
+  background: url('../img/hiking_tour_bg.png') center no-repeat #564b67;
+}
+
+.hiking-tour__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 107px;
+  padding-bottom: 87px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.hiking-tour__info {
+  width: 890px;
+  position: relative;
+}
+
+.hiking-tour__info::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  top: 322px;
+  left: -24px;
+}
+
+.hiking-tour__info::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  top: -14px;
+  right: -4px;
+}
+
+.hiking-tour__title {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 98px;
+  line-height: 1;
+}
+
+.hiking-tour__subtitle {
+  margin-top: 23px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.hiking-tour__subtitle span {
+  cursor: pointer;
+  color: #564b67;
+}
+
+.hiking-tour__popup {
+  right: 150px;
+  bottom: -60px;
+}
+
+.hiking-tour__add {
+  width: 189px;
+  margin-top: 200px;
+}
+
+.hiking-tour__date {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 50px;
+  line-height: 41px;
+  text-align: right;
+  position: relative;
+}
+
+.hiking-tour__date::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #fff;
+  bottom: -30px;
+  right: 0;
+}
+
+.hiking-tour__button {
+  margin-top: 83px;
+  color: #32455f;
+  background-color: #fbfbf5;
+}
+
+.hiking-tour__button:hover {
+  color: #fbfbf5;
+  background-color: #5f6551;
+}
+
+.hiking-tour__button:active {
+  color: #fbfbf5;
+  background-color: #939a82;
+}
+
+.places {
+  width: 1440px;
+  background-color: #fbfbf5;
+  color: #564b67;
+}
+
+.places__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 104px;
+  padding-bottom: 104px;
+}
+
+.places__title {
+  display: inline-block;
+  width: 443px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 73px;
+  line-height: 1;
+  position: relative;
+}
+
+.places__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #564b67;
+  border-left: 3px solid #564b67;
+  bottom: -31px;
+  left: -36px;
+}
+
+.places__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #564b67;
+  border-right: 3px solid #564b67;
+  top: -31px;
+  right: -36px;
+}
+
+.places__list {
+  list-style: none;
+  margin-top: 75px;
+  margin-bottom: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.places__item {
+  width: 320px;
+  overflow: hidden;
+}
+
+.places__pic {
+  width: 273px;
+  height: 273px;
+  border-radius: 50%;
+  margin-left: 23px;
+  -webkit-animation-name: borderChange;
+          animation-name: borderChange;
+  -webkit-animation-duration: 8s;
+          animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes borderChange {
+  from {
+    border-radius: 50%;
+  }
+
+  to {
+    border-radius: 10%;
+  }
+}
+
+@keyframes borderChange {
+  from {
+    border-radius: 50%;
+  }
+
+  to {
+    border-radius: 10%;
+  }
+}
+
+.places__caption {
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding: 0 23px;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 35px;
+}
+
+.places__text {
+  margin-top: 22px;
+  margin-bottom: 0;
+  padding: 0 23px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.places__length {
+  margin-top: 27px;
+  margin-bottom: 0;
+  padding: 20px 23px 0 23px;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 25px;
+  border-top: 2px solid #564b67;
+}
+
+.places__more {
+  width: 7px;
+  height: 26px;
+  font-size: 0;
+  border-radius: 0;
+  background: url('../img/button_more.png') no-repeat center #fbfbf5;
+}
+
+.places__button {
+  margin-top: 101px;
+  margin-left: 515px;
+  color: #fbfbf5;
+  background-color: #564b67;
+}
+
+.places__button:hover {
+  background-color: #32455f;
+}
+
+.places__button:active {
+  background-color: #7490b6;
+}
+
+.places__toggles {
+  display: none;
+}
+
+.backpacking-tour {
+  width: 1440px;
+  color: #fff;
+  background: url('../img/backpacking_tour_bg.png') center no-repeat;
+}
+
+.backpacking-tour__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 107px;
+  padding-bottom: 87px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.backpacking-tour__info {
+  width: 795px;
+  text-align: right;
+  position: relative;
+}
+
+.backpacking-tour__info::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #fff;
+  border-left: 3px solid #fff;
+  top: 322px;
+  left: -24px;
+}
+
+.backpacking-tour__info::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  top: -14px;
+  right: -4px;
+}
+
+.backpacking-tour__title {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 100px;
+  line-height: 1;
+}
+
+.backpacking-tour__subtitle {
+  margin-top: 23px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.backpacking-tour__subtitle span {
+  cursor: pointer;
+  color: #32455f;
+}
+
+.backpacking-tour__popup {
+  right: 30px;
+  bottom: -40px;
+}
+
+.backpacking-tour__add {
+  width: 189px;
+  margin-top: 200px;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+.backpacking-tour__date {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 50px;
+  line-height: 41px;
+  text-align: right;
+  position: relative;
+}
+
+.backpacking-tour__date::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #fff;
+  bottom: -30px;
+  right: 0;
+}
+
+.backpacking-tour__button {
+  margin-top: 83px;
+  color: #32455f;
+  background-color: #fbfbf5;
+}
+
+.backpacking-tour__button:hover {
+  color: #fbfbf5;
+  background-color: #5f6551;
+}
+
+.backpacking-tour__button:active {
+  color: #fbfbf5;
+  background-color: #939a82;
+}
+
+.basic-classes {
+  width: 1440px;
+  background-color: #fbfbf5;
+  color: #5f6551;
+}
+
+.basic-classes__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 107px;
+  padding-bottom: 115px;
+  position: relative;
+}
+
+.basic-classes__wrapper::before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 117px;
+  left: -53px;
+  width: 23px;
+  height: 93px;
+  background-image: url('../img/classes_x.png');
+}
+
+.basic-classes__wrapper::after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 115px;
+  right: -53px;
+  width: 23px;
+  height: 93px;
+  background-image: url('../img/classes_x.png');
+}
+
+.basic-classes__title {
+  display: inline-block;
+  width: 495px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+}
+
+.basic-classes__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #5f6551;
+  bottom: -33px;
+  left: 0;
+}
+
+.basic-classes__list {
+  margin-top: 83px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.basic-classes__item {
+  width: 327px;
+  padding-top: 180px;
+  text-align: center;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.basic-classes__item:nth-of-type(1) {
+  background-image: url('../img/classes_pic1.png');
+}
+
+.basic-classes__item:nth-of-type(2) {
+  background-image: url('../img/classes_pic2.png');
+}
+
+.basic-classes__item:nth-of-type(3) {
+  background-image: url('../img/classes_pic3.png');
+}
+
+.basic-classes__caption {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+}
+
+.basic-classes__text {
+  margin-top: 32px;
+  margin-bottom: 0;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.basic-classes__info {
+  display: block;
+  margin-top: 27px;
+  margin-bottom: 0;
+  padding-top: 20px;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 25px;
+  border-top: 2px solid #5f6551;
+}
+
+.basic-classes__time {
+  margin: 0;
+}
+
+.basic-classes__price {
+  margin: 0;
+}
+
+.basic-classes__button {
+  margin-top: 25px;
+  color: #fbfbf5;
+  background-color: #5f6551;
+}
+
+.basic-classes__button:hover {
+  background-color: #32455f;
+}
+
+.basic-classes__button:active {
+  background-color: #7490b6;
+}
+
+.basic-classes__toggles {
+  display: none;
+}
+
+.basic-classes__toggle {
+  width: 120px;
+  color: #fbfbf5;
+  background-color: #32455f;
+}
+
+.basic-classes__toggle:hover {
+  background-color: #564b67;
+}
+
+.basic-classes__toggle:active {
+  background-color: #887a9e;
+}
+
+.basic-classes__toggle:disabled {
+  cursor: default;
+  background-color: rgba(2, 4, 0, 0.2);
+}
+
+.gallery {
+  width: 1440px;
+  color: #fbfbf5;
+  text-align: center;
+  background-color: #32455f;
+  background-image: -o-radial-gradient(#fbfbf5 1.25px, #32455f 1.25px);
+  background-image: radial-gradient(#fbfbf5 1.25px, #32455f 1.25px);
+  background-size: 20px 20px;
+}
+
+.gallery__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.gallery__title {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 58px;
+  background-color: #32455f;
+  position: relative;
+}
+
+.gallery__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #fbfbf5;
+  border-left: 3px solid #fbfbf5;
+  bottom: 0;
+  left: 400px;
+}
+
+.gallery__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #fbfbf5;
+  border-right: 3px solid #fbfbf5;
+  top: 0;
+  right: 400px;
+}
+
+.gallery__subtitle {
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+  position: relative;
+  background-color: #32455f;
+}
+
+.gallery__subtitle::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #fbfbf5;
+  bottom: -30px;
+  left: 562px;
+}
+
+.gallery__list {
+  margin-top: 55px;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: left;
+}
+
+.gallery__item {
+  width: 350px;
+  height: 350px;
+  margin-bottom: 28px;
+  border: 5px solid #fbfbf5;
+  border-radius: 25%;
+  overflow: hidden;
+}
+
+.gallery__photo {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: 2s;
+  -o-transition: 2s;
+  transition: 2s;
+}
+
+.gallery__photo:hover {
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.gallery__button {
+  margin-top: 20px;
+  color: #32455f;
+  background-color: #fbfbf5;
+}
+
+.gallery__button:hover {
+  color: #fbfbf5;
+  background-color: #5f6551;
+}
+
+.gallery__button:active {
+  color: #fbfbf5;
+  background-color: #939a82;
+}
+
+.rock-climbing {
+  width: 1440px;
+  background: url('../img/rock_climbing_bg.png') bottom no-repeat #fbfbf5;
+}
+
+.rock-climbing__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 70px;
+  padding-bottom: 253px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.rock-climbing__main {
+  width: 531px;
+}
+
+.rock-climbing__title {
+  display: inline-block;
+  width: 245px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+}
+
+.rock-climbing__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #32455f;
+  border-left: 3px solid #32455f;
+  bottom: -35px;
+  left: -29px;
+}
+
+.rock-climbing__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #32455f;
+  border-right: 3px solid #32455f;
+  top: -22px;
+  right: 75px;
+}
+
+.rock-climbing__subtitle {
+  margin-top: 43px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+}
+
+.rock-climbing__text {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-family: 'Bitter', 'Times New Roman', serif;
+  letter-spacing: 0.075em;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+.rock-climbing__info {
+  margin-top: 33px;
+  margin-bottom: 0;
+  padding-top: 32px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 25px;
+  line-height: 41px;
+  font-weight: 700;
+  border-top: 2px solid #32455f;
+}
+
+.rock-climbing__add {
+  width: 241px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.rock-climbing__add::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #32455f;
+  border-left: 3px solid #32455f;
+  top: 75px;
+  left: -46px;
+}
+
+.rock-climbing__add::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 13px;
+  right: -50px;
+  width: 8px;
+  height: 30px;
+  background-image: url('../img/rock_climbing_x.png');
+}
+
+.rock-climbing__date {
+  display: block;
+  width: 100px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 33px;
+}
+
+.rock-climbing__price {
+  display: block;
+  width: 75px;
+  margin: 0;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+
+.ice-climbing {
+  width: 1440px;
+  color: #5f6551;
+  background: url('../img/ice_climbing_bg.png') bottom no-repeat #fbfbf5;
+}
+
+.ice-climbing__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 70px;
+  padding-bottom: 253px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.ice-climbing__wrapper::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 112px;
+  right: -50px;
+  width: 8px;
+  height: 30px;
+  background-image: url('../img/ice_climbing_x.png');
+}
+
+.ice-climbing__main {
+  width: 531px;
+}
+
+.ice-climbing__title {
+  display: inline-block;
+  width: 245px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 75px;
+  line-height: 1;
+  position: relative;
+}
+
+.ice-climbing__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #5f6551;
+  border-left: 3px solid #5f6551;
+  bottom: -35px;
+  left: -29px;
+}
+
+.ice-climbing__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #5f6551;
+  border-right: 3px solid #5f6551;
+  top: -22px;
+  right: 130px;
+}
+
+.ice-climbing__subtitle {
+  margin-top: 43px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+}
+
+.ice-climbing__text {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-family: 'Bitter', 'Times New Roman', serif;
+  letter-spacing: 0.075em;
+  font-size: 25px;
+  line-height: 45px;
+}
+
+.ice-climbing__info {
+  margin-top: 33px;
+  margin-bottom: 0;
+  padding-top: 32px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 25px;
+  line-height: 41px;
+  font-weight: 700;
+  border-top: 2px solid #5f6551;
+}
+
+.ice-climbing__add {
+  width: 241px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+  position: relative;
+}
+
+.ice-climbing__add::before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 50px;
+  right: -46px;
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #5f6551;
+  border-right: 3px solid #5f6551;
+}
+
+.ice-climbing__date {
+  display: block;
+  width: 100px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 33px;
+}
+
+.ice-climbing__price {
+  display: block;
+  width: 82px;
+  margin: 0;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
+}
+
+.membership {
+  width: 1440px;
+  color: #fbfbf5;
+  background: url('../img/membership_bg.png') top no-repeat #5f6551;
+}
+
+.membership__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.membership__wrapper::before {
+  position: absolute;
+  display: block;
+  content: '';
+  top: 45px;
+  left: -53px;
+  width: 23px;
+  height: 93px;
+  background-image: url('../img/membership_x.png');
+}
+
+.membership__wrapper::after {
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: 95px;
+  right: -53px;
+  width: 23px;
+  height: 93px;
+  background-image: url('../img/membership_x.png');
+}
+
+.membership__title {
+  display: inline-block;
+  width: 500px;
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 58px;
+  position: relative;
+}
+
+.membership__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #fbfbf5;
+  bottom: -30px;
+  left: 0;
+}
+
+.membership__subtitle {
+  margin-top: 45px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+}
+
+.membership__form {
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+
+.membership__fieldset {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: none;
+}
+
+.membership__field {
+  width: 189px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.membership__label {
+  font-family: 'Nunito', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding-left: 15px;
+  text-transform: uppercase;
+}
+
+.membership__input {
+  width: 189px;
+  height: 33px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 5px;
+  padding-left: 15px;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  color: #5f6551;
+  background-color: #fff;
+  outline: none;
+  border-radius: 25px;
+  border: none;
+  -webkit-box-shadow: inset 0px 5px 5px 0px rgba(2, 4, 0, 0.2);
+          box-shadow: inset 0px 5px 5px 0px rgba(2, 4, 0, 0.2);
+}
+
+.membership__input::-webkit-input-placeholder {
+  opacity: 1;
+  color: #5f6551;
+}
+
+.membership__input::-moz-placeholder {
+  opacity: 1;
+  color: #5f6551;
+}
+
+.membership__input:-ms-input-placeholder {
+  opacity: 1;
+  color: #5f6551;
+}
+
+.membership__input::-ms-input-placeholder {
+  opacity: 1;
+  color: #5f6551;
+}
+
+.membership__input::placeholder {
+  opacity: 1;
+  color: #5f6551;
+}
+
+.membership__input:focus {
+  outline: 2px solid #32455f;
+}
+
+.membership__button {
+  margin-top: 30px;
+  margin-left: 515px;
+  color: #5f6551;
+  background-color: #fbfbf5;
+}
+
+.membership__button:hover {
+  color: #fbfbf5;
+  background-color: #564b67;
+}
+
+.membership__button:active {
+  color: #fbfbf5;
+  background-color: #887a9e;
+}
+
+.levels {
+  width: 1440px;
+  background-color: #fbfbf5;
+  text-align: center;
+}
+
+.levels__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.levels__title {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 58px;
+  position: relative;
+}
+
+.levels__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #32455f;
+  border-left: 3px solid #32455f;
+  bottom: 0;
+  left: 240px;
+}
+
+.levels__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #32455f;
+  border-right: 3px solid #32455f;
+  top: 0;
+  right: 240px;
+}
+
+.levels__subtitle {
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+}
+
+.levels__slider {
+  margin: 45px 0 0 246px;
+}
+
+.levels__info {
+  margin-top: 30px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.levels__info::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #32455f;
+  bottom: -30px;
+  left: 562px;
+}
+
+.levels__text {
+  margin: 0;
+  font-family: 'Nunito', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.media {
+  width: 1440px;
+  color: #fbfbf5;
+  background: url('../img/media_bg.png') center no-repeat #32455f;
+}
+
+.media__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.media__title {
+  margin: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 58px;
+  text-align: right;
+  position: relative;
+}
+
+.media__title::before {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-bottom: 3px solid #fbfbf5;
+  border-left: 3px solid #fbfbf5;
+  bottom: 0;
+  right: 362px;
+}
+
+.media__title::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-top: 3px solid #fbfbf5;
+  border-right: 3px solid #fbfbf5;
+  top: 0px;
+  right: -36px;
+}
+
+.media__subtitle {
+  margin-top: 25px;
+  margin-bottom: 0;
+  font-family: 'BebasNeue', 'Arial', sans-serif;
+  letter-spacing: 0.065em;
+  font-size: 42px;
+  text-align: right;
+}
+
+.media__text {
+  margin-top: 25px;
+  margin-bottom: 0;
+  padding-left: 645px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  position: relative;
+}
+
+.media__text::after {
+  position: absolute;
+  display: block;
+  content: '';
+  width: 95px;
+  height: 1px;
+  border-bottom: 9px solid #fbfbf5;
+  bottom: -30px;
+  right: 480px;
+}
+
+.media__list {
+  margin: 0;
+  position: relative;
+}
+
+.media__list::after {
+  position: absolute;
+  display: block;
+  content: '';
+  top: -140px;
+  left: 0;
+  width: 92px;
+  height: 76px;
+  background-image: url('../img/media_pic.png');
+}
+
+.page-footer {
+  width: 1440px;
+  color: #5f6551;
+  background-color: #fbfbf5;
+}
+
+.page-footer__wrapper {
+  width: 1220px;
+  margin: 0 124px 0 96px;
+  padding-top: 109px;
+  padding-bottom: 59px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-footer__block {
+  width: 280px;
+  font-family: 'Raleway', 'Arial', sans-serif;
+}
+
+.page-footer__caption {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.page-footer__text {
+  margin-top: 26px;
+  margin-bottom: 0;
+  font-size: 17px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+.page-footer__logo {
+  margin-top: 60px;
+  margin-bottom: 0;
+  display: block;
+  width: 211px;
+  height: 41px;
+  font-size: 0;
+  background-image: url('../img/logo.png');
+}
+
+.page-footer__logo:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.page-footer__contacts {
+  margin-top: 26px;
+  margin-bottom: 0;
+}
+
+.page-footer__link {
+  display: block;
+  width: 100px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #5f6551;
+}
+
+.page-footer__link:first-of-type {
+  margin-top: 31px;
+}
+
+.page-footer__link--appstore {
+  display: block;
+  width: 240px;
+  height: 85px;
+  font-size: 0;
+  background-image: url('../img/appstore.png');
+}
+
+.page-footer__link--appstore:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.page-footer__link--googleplay {
+  display: block;
+  width: 240px;
+  height: 71px;
+  font-size: 0;
+  background-image: url('../img/google_play.png');
+}
+
+.page-footer__link--googleplay:hover {
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.page-footer__link:hover {
+  font-weight: 700;
+}
+
+.page-footer__link:active {
+  color: #32455f;
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: 768px;
+  }
+
+  .page-header {
+    width: 768px;
+    background-position: -140px 100%;
+  }
+
+  .page-header__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .page-header__logo {
+    width: 58px;
+    height: 32px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    background-image: url('../img/logo_tablet.png');
+  }
+
+  .page-header__search:focus {
+    -webkit-box-shadow: 330px -200px 0 400px rgba(0, 0, 0, 0.6);
+            box-shadow: 330px -200px 0 400px rgba(0, 0, 0, 0.6);
+  }
+
+  .main-nav {
+    width: 442px;
+  }
+
+  .page-main {
+    min-width: 768px;
+  }
+
+  .resources {
+    width: 768px;
+  }
+
+  .resources::after {
+    top: 520px;
+    right: 20px;
+  }
+
+  .resources__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .resources__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .resources__list {
+    padding-left: 70px;
+  }
+
+  .resources__item {
+    margin-bottom: 40px;
+  }
+
+  .resources__item:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .hiking-tour {
+    width: 768px;
+  }
+
+  .hiking-tour__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .hiking-tour__info::before {
+    left: -14px;
+  }
+
+  .hiking-tour__info::after {
+    top: -22px;
+    right: 20px;
+  }
+
+  .hiking-tour__title {
+    font-size: 58px;
+  }
+
+  .hiking-tour__popup {
+    right: 175px;
+    bottom: -75px;
+  }
+
+  .places {
+    width: 768px;
+  }
+
+  .places__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .places__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  .places__title::before {
+    left: -10px;
+  }
+
+  .places__list {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .places__item {
+    margin-bottom: 40px;
+  }
+
+  .places__item:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .places__button {
+    margin-top: 40px;
+    margin-left: 269px;
+  }
+
+  .backpacking-tour {
+    width: 768px;
+  }
+
+  .backpacking-tour__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .backpacking-tour__info::before {
+    top: 312px;
+    left: 290px;
+  }
+
+  .backpacking-tour__title {
+    font-size: 60px;
+  }
+
+  .backpacking-tour__popup {
+    right: 0px;
+    bottom: -55px;
+  }
+
+  .basic-classes {
+    width: 768px;
+  }
+
+  .basic-classes__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .basic-classes__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
+
+  .basic-classes__wrapper::before {
+    top: 80px;
+    left: 708px;
+  }
+
+  .basic-classes__wrapper::after {
+    display: none;
+  }
+
+  .basic-classes__item {
+    width: 220px;
+  }
+
+  .basic-classes__text {
+    font-size: 16px;
+  }
+
+  .gallery {
+    width: 768px;
+  }
+
+  .gallery__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .gallery__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .gallery__wrapper::before {
+    top: 60px;
+    left: 0;
+  }
+
+  .gallery__wrapper::after {
+    top: 60px;
+    right: 0;
+  }
+
+  .gallery__title::before {
+    left: 160px;
+  }
+
+  .gallery__title::after {
+    right: 160px;
+  }
+
+  .gallery__subtitle::after {
+    left: 316px;
+  }
+
+  .rock-climbing {
+    width: 768px;
+    background-position: -220px 100%;
+  }
+
+  .rock-climbing__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .rock-climbing__title::before {
+    left: -10px;
+  }
+
+  .rock-climbing__add::after {
+    top: 120px;
+    right: 0;
+  }
+
+  .ice-climbing {
+    width: 768px;
+    background-position: -440px 100%;
+  }
+
+  .ice-climbing__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .ice-climbing__wrapper::after {
+    display: none;
+  }
+
+  .ice-climbing__main {
+    text-align: right;
+  }
+
+  .ice-climbing__title::after {
+    top: -22px;
+    right: -10px;
+  }
+
+  .membership {
+    width: 768px;
+  }
+
+  .membership__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .membership__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .membership__wrapper::before {
+    display: none;
+  }
+
+  .membership__wrapper::after {
+    bottom: 280px;
+    right: 0;
+  }
+
+  .membership__title {
+    font-size: 42px;
+  }
+
+  .membership__subtitle {
+    font-size: 33px;
+  }
+
+  .membership__form {
+    margin-top: 25px;
+  }
+
+  .membership__field {
+    width: 280px;
+    margin-bottom: 20px;
+  }
+
+  .membership__field:nth-of-type(3),
+  .membership__field:nth-of-type(4) {
+    margin-bottom: 0;
+  }
+
+  .membership__button {
+    margin-left: 0;
+  }
+
+  .levels {
+    width: 768px;
+  }
+
+  .levels__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .levels__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .levels__title::before {
+    left: 0;
+  }
+
+  .levels__title::after {
+    right: 0;
+  }
+
+  .levels__slider {
+    margin-left: 0;
+  }
+
+  .levels__info::after {
+    left: 316px;
+  }
+
+  .levels__text {
+    font-size: 16px;
+  }
+
+  .media {
+    width: 768px;
+    background-position: 0 100%;
+  }
+
+  .media__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .media__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .media__title::before {
+    right: 342px;
+  }
+
+  .media__title::after {
+    top: 0px;
+    right: -10px;
+  }
+
+  .media__text {
+    padding-left: 240px;
+  }
+
+  .media__text::after {
+    right: 390px;
+  }
+
+  .page-footer {
+    width: 768px;
+  }
+
+  .page-footer__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .page-footer__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .page-footer__block:nth-of-type(1),
+  .page-footer__block:nth-of-type(2) {
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+    border-bottom: 2px solid #5f6551;
+  }
+
+  .page-footer__logo {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) and (max-width: 768px) {
+  .resources__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .places__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .basic-classes__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .gallery__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .membership__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .levels__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .media__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .page-footer__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) and (max-width: 320px) {
+  .resources__wrapper {
+    width: 280px;
+  }
+
+  .places__wrapper {
+    width: 280px;
+  }
+
+  .basic-classes__wrapper {
+    width: 280px;
+  }
+
+  .gallery__wrapper {
+    width: 280px;
+  }
+
+  .membership__wrapper {
+    width: 280px;
+  }
+
+  .levels__wrapper {
+    width: 280px;
+  }
+
+  .media__wrapper {
+    width: 280px;
+  }
+
+  .page-footer__wrapper {
+    width: 280px;
+  }
+}
+
+@media (max-width: 320px) {
+  body {
+    min-width: 320px;
+  }
+
+  .slider {
+    width: 280px;
+  }
+
+  .slider__caption {
+    font-size: 12px;
+  }
+
+  .popup::after {
+    left: 40%;
+  }
+
+  .page-header {
+    width: 320px;
+  }
+
+  .page-header__wrapper {
+    width: 280px;
+  }
+
+  .page-header__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .page-header__top::after {
+    display: none;
+  }
+
+  .page-header__bottom {
+    width: 280px;
+    margin-top: 40px;
+    padding: 0;
+  }
+
+  .page-header__bottom::after {
+    bottom: -10px;
+    left: -10px;
+  }
+
+  .page-header__search {
+    width: 160px;
+  }
+
+  .page-header__search:focus {
+    -webkit-box-shadow: 240px -200px 0 400px rgba(0, 0, 0, 0.6);
+            box-shadow: 240px -200px 0 400px rgba(0, 0, 0, 0.6);
+  }
+
+  .page-header__button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 45px;
+    height: 33px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    font-size: 0;
+    border-radius: 0;
+    background-color: inherit;
+    background: url('../img/page_header_button.png') center no-repeat;
+  }
+
+  .main-nav {
+    width: 280px;
+    margin-top: 20px;
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    position: relative;
+  }
+
+  .main-nav::before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-bottom: 3px solid #32455f;
+    border-left: 3px solid #32455f;
+    bottom: 0;
+    left: 36px;
+  }
+
+  .main-nav::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-top: 3px solid #32455f;
+    border-right: 3px solid #32455f;
+    top: 0;
+    right: 36px;
+  }
+
+  .main-nav--closed {
+    display: none;
+  }
+
+  .main-nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+
+  .main-nav__item {
+    text-align: center;
+  }
+
+  .page-main {
+    min-width: 320px;
+  }
+
+  .resources {
+    width: 320px;
+  }
+
+  .resources::after {
+    display: none;
+  }
+
+  .resources__wrapper {
+    width: 280px;
+  }
+
+  .resources__title {
+    width: 280px;
+  }
+
+  .resources__list {
+    padding: 0;
+  }
+
+  .resources__item {
+    width: 280px;
+    padding: 177px 20px 20px 20px;
+    background-position: 50% 20px;
+  }
+
+  .resources__text {
+    width: 240px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .hiking-tour {
+    width: 320px;
+    background-position: -650px 0;
+  }
+
+  .hiking-tour__wrapper {
+    width: 280px;
+  }
+
+  .hiking-tour__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+  }
+
+  .hiking-tour__info {
+    width: 280px;
+  }
+
+  .hiking-tour__info::before {
+    top: 200px;
+    left: -14px;
+  }
+
+  .hiking-tour__info::after {
+    top: -22px;
+    right: 20px;
+  }
+
+  .hiking-tour__title {
+    font-size: 42px;
+  }
+
+  .hiking-tour__subtitle {
+    font-size: 21px;
+  }
+
+  .hiking-tour__popup {
+    width: 80px;
+    padding: 5px;
+    font-size: 10px;
+    left: 30px;
+    bottom: -130px;
+  }
+
+  .hiking-tour__add {
+    width: 280px;
+    margin-top: 20px;
+  }
+
+  .hiking-tour__button {
+    margin-left: 91px;
+  }
+
+  .places {
+    width: 320px;
+  }
+
+  .places__wrapper {
+    width: 280px;
+  }
+
+  .places__title {
+    width: 280px;
+    font-size: 58px;
+  }
+
+  .places__title::before {
+    bottom: -10px;
+  }
+
+  .places__title::after {
+    top: -10px;
+    right: -10px;
+  }
+
+  .places__list {
+    display: block;
+  }
+
+  .places__item {
+    width: 280px;
+  }
+
+  .places__pic {
+    margin-left: 3.5px;
+  }
+
+  .places__caption {
+    font-size: 33px;
+  }
+
+  .places__text {
+    font-size: 19px;
+  }
+
+  .places__button {
+    display: none;
+  }
+
+  .places__toggles {
+    display: block;
+  }
+
+  .backpacking-tour {
+    width: 320px;
+    background-position: -400px 0;
+  }
+
+  .backpacking-tour__wrapper {
+    width: 280px;
+  }
+
+  .backpacking-tour__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+  }
+
+  .backpacking-tour__info {
+    width: 280px;
+  }
+
+  .backpacking-tour__info::before {
+    top: 130px;
+    left: 0px;
+  }
+
+  .backpacking-tour__info::after {
+    right: -10px;
+  }
+
+  .backpacking-tour__title {
+    font-size: 42px;
+  }
+
+  .backpacking-tour__subtitle {
+    font-size: 21px;
+  }
+
+  .backpacking-tour__popup {
+    width: 60px;
+    padding: 5px;
+    font-size: 10px;
+    left: 48px;
+    bottom: -70px;
+  }
+
+  .backpacking-tour__add {
+    width: 280px;
+    margin-top: 20px;
+  }
+
+  .backpacking-tour__button {
+    margin-left: 91px;
+  }
+
+  .basic-classes {
+    width: 320px;
+  }
+
+  .basic-classes__wrapper {
+    width: 280px;
+  }
+
+  .basic-classes__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .basic-classes__wrapper::before {
+    display: none;
+  }
+
+  .basic-classes__title {
+    width: 280px;
+  }
+
+  .basic-classes__item {
+    width: 280px;
+    margin-bottom: 40px;
+  }
+
+  .basic-classes__item:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .basic-classes__toggles {
+    margin-top: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+
+  .gallery {
+    width: 320px;
+  }
+
+  .gallery__wrapper {
+    width: 280px;
+  }
+
+  .gallery__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .gallery__wrapper::before {
+    display: none;
+  }
+
+  .gallery__wrapper::after {
+    display: none;
+  }
+
+  .gallery__title {
+    font-size: 42px;
+  }
+
+  .gallery__title::before {
+    left: 0;
+  }
+
+  .gallery__title::after {
+    right: 0;
+  }
+
+  .gallery__subtitle {
+    font-size: 33px;
+  }
+
+  .gallery__subtitle::after {
+    left: 92px;
+  }
+
+  .gallery__item {
+    width: 280px;
+    height: 280px;
+  }
+
+  .rock-climbing {
+    width: 320px;
+    background-position: -360px 100%;
+  }
+
+  .rock-climbing__wrapper {
+    width: 280px;
+  }
+
+  .rock-climbing__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: block;
+  }
+
+  .rock-climbing__main {
+    width: 280px;
+  }
+
+  .rock-climbing__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .rock-climbing__info {
+    padding: 0;
+  }
+
+  .rock-climbing__add {
+    width: 280px;
+    margin-top: 30px;
+  }
+
+  .rock-climbing__add::before {
+    display: none;
+  }
+
+  .rock-climbing__add::after {
+    display: none;
+  }
+
+  .rock-climbing__price {
+    color: #fbfbf5;
+  }
+
+  .ice-climbing {
+    width: 320px;
+    background-position: -625px 125%;
+  }
+
+  .ice-climbing__wrapper {
+    width: 280px;
+  }
+
+  .ice-climbing__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 40px;
+    padding-bottom: 100px;
+    display: block;
+  }
+
+  .ice-climbing__main {
+    width: 280px;
+  }
+
+  .ice-climbing__text {
+    font-size: 18px;
+    line-height: 1.2;
+  }
+
+  .ice-climbing__info {
+    padding: 0;
+  }
+
+  .ice-climbing__add {
+    width: 280px;
+    margin-top: 30px;
+  }
+
+  .ice-climbing__add::before {
+    display: none;
+  }
+
+  .ice-climbing__add::after {
+    display: none;
+  }
+
+  .ice-climbing__date {
+    color: #fbfbf5;
+  }
+
+  .membership {
+    width: 320px;
+    background-image: none;
+  }
+
+  .membership__wrapper {
+    width: 280px;
+  }
+
+  .membership__wrapper::after {
+    bottom: 60px;
+  }
+
+  .membership__title {
+    width: 280px;
+  }
+
+  .membership__field {
+    text-align: center;
+  }
+
+  .membership__field:nth-of-type(3) {
+    margin-bottom: 20px;
+  }
+
+  .membership__label {
+    padding: 0;
+  }
+
+  .membership__input {
+    margin-left: 45px;
+  }
+
+  .membership__button {
+    margin-left: 45px;
+  }
+
+  .levels {
+    width: 320px;
+  }
+
+  .levels__wrapper {
+    width: 280px;
+  }
+
+  .levels__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+
+  .levels__subtitle {
+    font-size: 33px;
+  }
+
+  .levels__info::after {
+    left: 92px;
+  }
+
+  .levels__text {
+    font-size: 14px;
+  }
+
+  .media {
+    width: 320px;
+  }
+
+  .media__wrapper {
+    width: 280px;
+  }
+
+  .media__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .media__title {
+    font-size: 42px;
+  }
+
+  .media__subtitle {
+    font-size: 33px;
+  }
+
+  .media__text {
+    padding-left: 0;
+    text-align: right;
+  }
+
+  .media__text::after {
+    right: 0;
+  }
+
+  .media__list {
+    margin-top: 50px;
+    padding-left: 39px;
+  }
+
+  .media__list::after {
+    display: none;
+  }
+
+  .page-footer {
+    width: 320px;
+  }
+
+  .page-footer__wrapper {
+    width: 280px;
+  }
+
+  .page-footer__wrapper {
+    width: 1220px;
+    margin: 0 124px 0 96px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    display: block;
+  }
+
+  .page-footer__block {
+    width: 280px;
+  }
+
+  .page-footer__block:nth-of-type(3) {
+    margin-bottom: 26px;
+    padding-bottom: 26px;
+    border-bottom: 2px solid #5f6551;
+  }
+}
+
+@media (max-width: 320px) and (max-width: 768px) {
+  .page-header__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .hiking-tour__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .backpacking-tour__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .basic-classes__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .gallery__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .rock-climbing__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .ice-climbing__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .levels__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .media__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+
+  .page-footer__wrapper {
+    width: 728px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 320px) and (max-width: 320px) {
+  .page-header__wrapper {
+    width: 280px;
+  }
+
+  .hiking-tour__wrapper {
+    width: 280px;
+  }
+
+  .backpacking-tour__wrapper {
+    width: 280px;
+  }
+
+  .basic-classes__wrapper {
+    width: 280px;
+  }
+
+  .gallery__wrapper {
+    width: 280px;
+  }
+
+  .rock-climbing__wrapper {
+    width: 280px;
+  }
+
+  .ice-climbing__wrapper {
+    width: 280px;
+  }
+
+  .levels__wrapper {
+    width: 280px;
+  }
+
+  .media__wrapper {
+    width: 280px;
+  }
+
+  .page-footer__wrapper {
+    width: 280px;
+  }
+}
