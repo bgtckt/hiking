@@ -1,3 +1,5 @@
+"use strict";
+
 const resourcesLink = document.querySelector('#resources-link');
 const resourcesSection = document.querySelector('.resources');
 const toursLink = document.querySelector('#tours-link');

@@ -1,3 +1,4 @@
+"use strict";
 //Компоненты Vue для разделов resources, places и basic-classes
 
 const AppResources = {
