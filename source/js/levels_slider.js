@@ -1,3 +1,4 @@
+"use strict";
 //Реализация слайдера для переключения между уровнями навыков секции levels
 
 const levelsSlider = document.querySelector('#levels-slider');
@@ -13,7 +14,7 @@ for (let i = 0; i < levelsInfoBlocks.length; i++) {
 
 levelsSlider.addEventListener('input', (evt) => {
   levelsInfoBlocks.forEach(elem => elem.style.display = 'none');
-  for (i = 0; i < levelsInfoBlocks.length; i++) {
+  for (let i = 0; i < levelsInfoBlocks.length; i++) {
     if (Number(evt.target.value) === sliderStartValue + i * sliderStep) {
       levelsInfoBlocks[i].style.display = 'block';
     }

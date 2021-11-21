@@ -1,3 +1,4 @@
+"use strict";
 //Открытие и закрытие popup
 
 const hikingPopupLink = document.querySelector('#hiking-popup');
