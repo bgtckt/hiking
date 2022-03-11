@@ -48,7 +48,7 @@
 
 body {
   min-width: 1440px;
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   color: #32455f;
 }
@@ -396,6 +396,7 @@ img {
 
 .page-header {
   width: 1440px;
+  margin: 0 auto;
   background: url('../img/page_header_bg.png') 0% 100% no-repeat #fbfbf5;
   overflow: hidden;
 }
@@ -576,6 +577,7 @@ img {
 
 .page-main {
   width: 1440px;
+  margin: 0 auto;
 }
 
 .resources {
@@ -2075,6 +2077,7 @@ img {
 
 .page-footer {
   width: 1440px;
+  margin: 0 auto;
   color: #5f6551;
   background-color: #fbfbf5;
 }
